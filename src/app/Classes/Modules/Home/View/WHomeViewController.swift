@@ -218,14 +218,13 @@ class WHomeViewController: UIViewController, WHomeViewInterface, UICollectionVie
     func updateViewWithCategories(categories: [WCategory]) {
         self.categories = categories
         
-        var dataSource: [AZDropdownMenuItemData] = []
-        
+        var categorieNames: [String] = []
         for category in categories {
-            let data = AZDropdownMenuItemData(title:category.category_name!, icon:UIImage())
-            dataSource.append(data)
+            categorieNames.append(category.category_name!)
         }
         
-        filterMenu = AZDropdownMenu(dataSource: dataSource)
+        let leftTitles = categorieNames
+        filterMenu = AZDropdownMenu(titles: leftTitles)
         filterMenu!.itemFontSize = 16.0
         filterMenu!.cellTapHandler = { [weak self] (indexPath: NSIndexPath) -> Void in
             
