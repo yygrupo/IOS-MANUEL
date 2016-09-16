@@ -1,0 +1,21 @@
+PODS:
+  - Alamofire (3.4.1)
+  - IQKeyboardManagerSwift (4.0.4)
+  - SlideMenuControllerSwift (2.2.2)
+  - SwiftyJSON (2.3.2)
+
+DEPENDENCIES:
+  - Alamofire (~> 3.4)
+  - IQKeyboardManagerSwift
+  - SlideMenuControllerSwift
+  - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
+  IQKeyboardManagerSwift: e0964d04d6a29b71016fd346dca13ecb80a2823a
+  SlideMenuControllerSwift: e257221100c39d49edccaaeb0238b55a0c67953a
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
+
+PODFILE CHECKSUM: 9ccddfa10c1c4146ac932a8ccc23f69c2c09e02a
+
+COCOAPODS: 1.0.1
