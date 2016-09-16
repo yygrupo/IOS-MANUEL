@@ -4,12 +4,47 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>AZDropdownMenu-AZDropdownMenu.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>AZDropdownMenu.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Alamofire.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>BRYXBanner-BRYXBanner.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>BRYXBanner.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>FlatUIColors.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>IQKeyboardManagerSwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>MBProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>MapleBacon.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -42,22 +77,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>0927957DBBE78B166F56E81DBC23DB03</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>1520003FEBEC114D6C84F832AFEDB994</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>188CBFB986EE6CA1C6794150C2CE632D</key>
+		<key>336B93337DFC5EE58B564606FF93F15D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>391D26740B117C49D302B88A00C2A2CA</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>542252D2DB8E9DAF501F0D032CA3B375</key>
+		<key>5D71132139A1E1855313CBD9F229AC7A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -67,12 +102,47 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>75AEEEFD7E431013E8E60009251D5797</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>8EE2130E28914C9A846631C14A78F9F3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>9D8414A013D5C8A55188EFB1216801B1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DBA6001481CEA0EBA031CC5C94508FAA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DC9D137F7D0E6ADF675773CC8DBE3891</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E45C60E65DC7B25E659C0A735F907FC7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FB6F01F6DD5F13C45044352CE2414E23</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FBFB8F15509AB48EB645169DF10DB083</key>
 		<dict>
 			<key>primary</key>
 			<true/>

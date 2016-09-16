@@ -18,3 +18,12 @@ struct DeviceInfo {
     static let VERSION : String = UIDevice.currentDevice().systemVersion
     static let ISPHONE : Bool = (UIDevice.currentDevice().userInterfaceIdiom == .Phone) ? true : false
 }
+
+struct AppColors {
+    static let blue = UIColor(hexString: "#1A4682")
+}
+
+struct AppAPI {
+    static let url = "http://localhost/projects/worcipe/api.php"
+    static let resouresPath = "http://localhost/projects/worcipe/upload/"
+}

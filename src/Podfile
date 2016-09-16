@@ -11,13 +11,27 @@ target 'app' do
   pod 'SlideMenuControllerSwift'
   
   # Networking
-  pod 'Alamofire', '~> 3.4'
+  pod 'Alamofire'
+  
+  # Indicator
+  pod 'MBProgressHUD'
   
   # KeyboardManager
   pod 'IQKeyboardManagerSwift'
   
   # SwiftyJSON
   pod 'SwiftyJSON'
+  
+  # Colors
+  pod 'FlatUIColors'
+  
+  # Notification
+  pod 'BRYXBanner'
+  
+  # Image donwload
+  pod 'MapleBacon'
+  
+  pod 'AZDropdownMenu'
 
   target 'appTests' do
     inherit! :search_paths

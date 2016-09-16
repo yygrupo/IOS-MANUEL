@@ -10,5 +10,7 @@ import Foundation
 
 protocol WHomeViewInterface
 {
-
+    func updateViewWithRecipes(recipes: [WRecipe])
+    func updateViewWithCategories(categories: [WCategory])
+    func stopLoadingView()
 }

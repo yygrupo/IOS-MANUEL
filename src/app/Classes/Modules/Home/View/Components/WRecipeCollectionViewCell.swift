@@ -7,8 +7,23 @@
 //
 
 import UIKit
+import MapleBacon
 
 class WRecipeCollectionViewCell: UICollectionViewCell {
+    
+    @IBOutlet weak var labelRecipeName: UILabel?
+    @IBOutlet weak var imageViewRecipe: UIImageView?
+    @IBOutlet weak var labelLocalName: UILabel?
+    @IBOutlet weak var labelAddress: UILabel?
+    @IBOutlet weak var labelStartDistance: UILabel?
+    @IBOutlet weak var labelEndDistance: UILabel?
+    @IBOutlet weak var imageViewStartI: UIImageView?
+    @IBOutlet weak var imageViewStartII: UIImageView?
+    @IBOutlet weak var imageViewStartIII: UIImageView?
+    @IBOutlet weak var imageViewStartIV: UIImageView?
+    @IBOutlet weak var imageViewStartV: UIImageView?
+    
+    var recipe: WRecipe?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,6 +42,17 @@ class WRecipeCollectionViewCell: UICollectionViewCell {
         self.layer.shadowColor = UIColor.lightGrayColor().CGColor
         self.layer.shadowOffset = CGSizeMake(-5.0, -5.0)
         self.layer.shadowRadius = 5.0
+    }
+    
+    func updateViewWithData(recipe: WRecipe) {
+        self.recipe = recipe
+        
+        labelRecipeName?.text = recipe.worcipe_heading
+        
+        if let imageURL = NSURL(string: recipe.worcipe_image!), placeholder = UIImage(named: "Hourglass Sand Top") {
+            imageViewRecipe!.setImageWithURL(imageURL, placeholder: placeholder)
+        }
+        labelLocalName?.text = recipe.worcipe_description
     }
     
 }

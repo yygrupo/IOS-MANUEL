@@ -10,10 +10,10 @@ import Foundation
 
 protocol WHomeModuleInterface
 {
-
+    func updateView()
 }
 
 protocol WHomeModuleDelegate
 {
-
+    
 }
