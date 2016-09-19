@@ -24,6 +24,9 @@ struct AppColors {
 }
 
 struct AppAPI {
-    static let url = "http://localhost/projects/worcipe/api.php"
-    static let resouresPath = "http://localhost/projects/worcipe/upload/"
+    static let url = "http://worcipe.3wia.com/api.php"
+    static let resouresPath = "http://worcipe.3wia.com/upload/"
+    
+//    static let url = "http://localhost/projects/worcipe/api.php"
+//    static let resouresPath = "http://localhost/projects/worcipe/upload/"
 }

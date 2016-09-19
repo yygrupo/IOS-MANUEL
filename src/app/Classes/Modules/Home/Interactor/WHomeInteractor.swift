@@ -18,7 +18,6 @@ class WHomeInteractor: NSObject
     func findRecipes() {
         Alamofire.request(
             .GET, AppAPI.url, parameters: ["recipes": "all"], encoding: .URL)
-            .validate()
             .responseJSON { (response) -> Void in
                 guard response.result.error == nil else {
                     // got an error in getting the data, need to handle it

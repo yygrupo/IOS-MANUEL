@@ -226,9 +226,9 @@ class WHomeViewController: UIViewController, WHomeViewInterface, UICollectionVie
         let leftTitles = categorieNames
         filterMenu = AZDropdownMenu(titles: leftTitles)
         filterMenu!.itemFontSize = 16.0
-        filterMenu!.cellTapHandler = { [weak self] (indexPath: NSIndexPath) -> Void in
-            
-        }
+//        filterMenu!.cellTapHandler = { [weak self] (indexPath: NSIndexPath) -> Void in
+//            
+//        }
     }
     
     // MARK: - Button event handlers
