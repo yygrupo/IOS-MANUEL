@@ -8,6 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		378EB4A6667CD8CDDA4A2E15 /* Pods_appTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C18CA9AE026506F49D051ACF /* Pods_appTests.framework */; };
+		714098381D90DC2800B43B11 /* WLocalProfileDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7140981E1D90DC2800B43B11 /* WLocalProfileDataManager.swift */; };
+		714098391D90DC2800B43B11 /* WLocalProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714098201D90DC2800B43B11 /* WLocalProfileInteractor.swift */; };
+		7140983A1D90DC2800B43B11 /* WLocalProfileModuleInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714098221D90DC2800B43B11 /* WLocalProfileModuleInterface.swift */; };
+		7140983B1D90DC2800B43B11 /* WLocalProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714098241D90DC2800B43B11 /* WLocalProfilePresenter.swift */; };
+		7140983C1D90DC2800B43B11 /* WLocalProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714098261D90DC2800B43B11 /* WLocalProfileViewController.swift */; };
+		7140983D1D90DC2800B43B11 /* WLocalProfileViewInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714098271D90DC2800B43B11 /* WLocalProfileViewInterface.swift */; };
+		7140983E1D90DC2800B43B11 /* WLocalProfileWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714098291D90DC2800B43B11 /* WLocalProfileWireframe.swift */; };
+		7140983F1D90DC2800B43B11 /* WRecipeProfileDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7140982C1D90DC2800B43B11 /* WRecipeProfileDataManager.swift */; };
+		714098401D90DC2800B43B11 /* WRecipeProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7140982E1D90DC2800B43B11 /* WRecipeProfileInteractor.swift */; };
+		714098411D90DC2800B43B11 /* WRecipeProfileModuleInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714098301D90DC2800B43B11 /* WRecipeProfileModuleInterface.swift */; };
+		714098421D90DC2800B43B11 /* WRecipeProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714098321D90DC2800B43B11 /* WRecipeProfilePresenter.swift */; };
+		714098431D90DC2800B43B11 /* WRecipeProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714098341D90DC2800B43B11 /* WRecipeProfileViewController.swift */; };
+		714098441D90DC2800B43B11 /* WRecipeProfileViewInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714098351D90DC2800B43B11 /* WRecipeProfileViewInterface.swift */; };
+		714098451D90DC2800B43B11 /* WRecipeProfileWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714098371D90DC2800B43B11 /* WRecipeProfileWireframe.swift */; };
 		717C25F51D88570F00E50459 /* WHomeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717C25E91D88570F00E50459 /* WHomeDataManager.swift */; };
 		717C25F61D88570F00E50459 /* WHomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717C25EB1D88570F00E50459 /* WHomeInteractor.swift */; };
 		717C25F71D88570F00E50459 /* WHomeModuleInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717C25ED1D88570F00E50459 /* WHomeModuleInterface.swift */; };
@@ -181,6 +195,20 @@
 /* Begin PBXFileReference section */
 		1C1A08DFF8D66863B3214C06 /* Pods-appTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-appTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-appTests/Pods-appTests.debug.xcconfig"; sourceTree = "<group>"; };
 		56EFCD6F37CBBB63D2C6DEAE /* Pods-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-app.release.xcconfig"; path = "Pods/Target Support Files/Pods-app/Pods-app.release.xcconfig"; sourceTree = "<group>"; };
+		7140981E1D90DC2800B43B11 /* WLocalProfileDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WLocalProfileDataManager.swift; sourceTree = "<group>"; };
+		714098201D90DC2800B43B11 /* WLocalProfileInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WLocalProfileInteractor.swift; sourceTree = "<group>"; };
+		714098221D90DC2800B43B11 /* WLocalProfileModuleInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WLocalProfileModuleInterface.swift; sourceTree = "<group>"; };
+		714098241D90DC2800B43B11 /* WLocalProfilePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WLocalProfilePresenter.swift; sourceTree = "<group>"; };
+		714098261D90DC2800B43B11 /* WLocalProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WLocalProfileViewController.swift; sourceTree = "<group>"; };
+		714098271D90DC2800B43B11 /* WLocalProfileViewInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WLocalProfileViewInterface.swift; sourceTree = "<group>"; };
+		714098291D90DC2800B43B11 /* WLocalProfileWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WLocalProfileWireframe.swift; sourceTree = "<group>"; };
+		7140982C1D90DC2800B43B11 /* WRecipeProfileDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WRecipeProfileDataManager.swift; sourceTree = "<group>"; };
+		7140982E1D90DC2800B43B11 /* WRecipeProfileInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WRecipeProfileInteractor.swift; sourceTree = "<group>"; };
+		714098301D90DC2800B43B11 /* WRecipeProfileModuleInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WRecipeProfileModuleInterface.swift; sourceTree = "<group>"; };
+		714098321D90DC2800B43B11 /* WRecipeProfilePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WRecipeProfilePresenter.swift; sourceTree = "<group>"; };
+		714098341D90DC2800B43B11 /* WRecipeProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WRecipeProfileViewController.swift; sourceTree = "<group>"; };
+		714098351D90DC2800B43B11 /* WRecipeProfileViewInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WRecipeProfileViewInterface.swift; sourceTree = "<group>"; };
+		714098371D90DC2800B43B11 /* WRecipeProfileWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WRecipeProfileWireframe.swift; sourceTree = "<group>"; };
 		717C25E91D88570F00E50459 /* WHomeDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WHomeDataManager.swift; sourceTree = "<group>"; };
 		717C25EB1D88570F00E50459 /* WHomeInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WHomeInteractor.swift; sourceTree = "<group>"; };
 		717C25ED1D88570F00E50459 /* WHomeModuleInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WHomeModuleInterface.swift; sourceTree = "<group>"; };
@@ -332,6 +360,130 @@
 				94A1AAACE6D45CAAEEC2E8C3 /* Pods-appUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		7140981C1D90DC2800B43B11 /* LocalProfile */ = {
+			isa = PBXGroup;
+			children = (
+				7140981D1D90DC2800B43B11 /* DataManager */,
+				7140981F1D90DC2800B43B11 /* Interactor */,
+				714098211D90DC2800B43B11 /* ModuleInterface */,
+				714098231D90DC2800B43B11 /* Presenter */,
+				714098251D90DC2800B43B11 /* View */,
+				714098281D90DC2800B43B11 /* Wireframe */,
+			);
+			path = LocalProfile;
+			sourceTree = "<group>";
+		};
+		7140981D1D90DC2800B43B11 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				7140981E1D90DC2800B43B11 /* WLocalProfileDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		7140981F1D90DC2800B43B11 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				714098201D90DC2800B43B11 /* WLocalProfileInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		714098211D90DC2800B43B11 /* ModuleInterface */ = {
+			isa = PBXGroup;
+			children = (
+				714098221D90DC2800B43B11 /* WLocalProfileModuleInterface.swift */,
+			);
+			path = ModuleInterface;
+			sourceTree = "<group>";
+		};
+		714098231D90DC2800B43B11 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				714098241D90DC2800B43B11 /* WLocalProfilePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		714098251D90DC2800B43B11 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				714098261D90DC2800B43B11 /* WLocalProfileViewController.swift */,
+				714098271D90DC2800B43B11 /* WLocalProfileViewInterface.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		714098281D90DC2800B43B11 /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				714098291D90DC2800B43B11 /* WLocalProfileWireframe.swift */,
+			);
+			path = Wireframe;
+			sourceTree = "<group>";
+		};
+		7140982A1D90DC2800B43B11 /* RecipeProfile */ = {
+			isa = PBXGroup;
+			children = (
+				7140982B1D90DC2800B43B11 /* DataManager */,
+				7140982D1D90DC2800B43B11 /* Interactor */,
+				7140982F1D90DC2800B43B11 /* ModuleInterface */,
+				714098311D90DC2800B43B11 /* Presenter */,
+				714098331D90DC2800B43B11 /* View */,
+				714098361D90DC2800B43B11 /* Wireframe */,
+			);
+			path = RecipeProfile;
+			sourceTree = "<group>";
+		};
+		7140982B1D90DC2800B43B11 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				7140982C1D90DC2800B43B11 /* WRecipeProfileDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		7140982D1D90DC2800B43B11 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				7140982E1D90DC2800B43B11 /* WRecipeProfileInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		7140982F1D90DC2800B43B11 /* ModuleInterface */ = {
+			isa = PBXGroup;
+			children = (
+				714098301D90DC2800B43B11 /* WRecipeProfileModuleInterface.swift */,
+			);
+			path = ModuleInterface;
+			sourceTree = "<group>";
+		};
+		714098311D90DC2800B43B11 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				714098321D90DC2800B43B11 /* WRecipeProfilePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		714098331D90DC2800B43B11 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				714098341D90DC2800B43B11 /* WRecipeProfileViewController.swift */,
+				714098351D90DC2800B43B11 /* WRecipeProfileViewInterface.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		714098361D90DC2800B43B11 /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				714098371D90DC2800B43B11 /* WRecipeProfileWireframe.swift */,
+			);
+			path = Wireframe;
 			sourceTree = "<group>";
 		};
 		717C25E71D88570F00E50459 /* Home */ = {
@@ -808,6 +960,8 @@
 		71D314551D884A5C008307DC /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				7140981C1D90DC2800B43B11 /* LocalProfile */,
+				7140982A1D90DC2800B43B11 /* RecipeProfile */,
 				718ADC131D8C7F3900982CB8 /* Menu */,
 				71DDF7251D89F9C4001A5646 /* Map */,
 				71DDF7101D89EE76001A5646 /* Profile */,
@@ -1374,6 +1528,8 @@
 				717C266D1D889B1600E50459 /* WLocalInteractor.swift in Sources */,
 				71DDF6F61D89DA3F001A5646 /* WLoginModuleInterface.swift in Sources */,
 				717C26901D88A1F900E50459 /* WRateInteractor.swift in Sources */,
+				714098451D90DC2800B43B11 /* WRecipeProfileWireframe.swift in Sources */,
+				714098431D90DC2800B43B11 /* WRecipeProfileViewController.swift in Sources */,
 				71DDF70E1D89E4A4001A5646 /* WRegisterViewInterface.swift in Sources */,
 				717C26501D886F9000E50459 /* WRecipeCollectionViewCell.swift in Sources */,
 				717C25F81D88570F00E50459 /* WHomePresenter.swift in Sources */,
@@ -1382,11 +1538,15 @@
 				71DDF7371D89F9C4001A5646 /* WMapViewController.swift in Sources */,
 				717C269C1D88A1F900E50459 /* WRateViewInterface.swift in Sources */,
 				71DDF7381D89F9C4001A5646 /* WMapViewInterface.swift in Sources */,
+				7140983A1D90DC2800B43B11 /* WLocalProfileModuleInterface.swift in Sources */,
+				714098401D90DC2800B43B11 /* WRecipeProfileInteractor.swift in Sources */,
+				7140983E1D90DC2800B43B11 /* WLocalProfileWireframe.swift in Sources */,
 				717C26991D88A1F900E50459 /* WRateViewController.swift in Sources */,
 				71DDF7211D89EE76001A5646 /* WProfilePresenter.swift in Sources */,
 				718ADC261D8C7F3900982CB8 /* WMenuViewInterface.swift in Sources */,
 				71DDF6FA1D89DA3F001A5646 /* WLoginWireframe.swift in Sources */,
 				71DDF70A1D89E4A4001A5646 /* WRegisterInteractor.swift in Sources */,
+				714098411D90DC2800B43B11 /* WRecipeProfileModuleInterface.swift in Sources */,
 				71D314641D884AF8008307DC /* WCoreDataStore.swift in Sources */,
 				717C26311D88619E00E50459 /* UITextFieldExtension.swift in Sources */,
 				71DDF70C1D89E4A4001A5646 /* WRegisterPresenter.swift in Sources */,
@@ -1410,6 +1570,8 @@
 				718ADC241D8C7F3900982CB8 /* WMenuPresenter.swift in Sources */,
 				718ADC271D8C7F3900982CB8 /* WMenuWireframe.swift in Sources */,
 				71DDF70D1D89E4A4001A5646 /* WRegisterViewController.swift in Sources */,
+				7140983F1D90DC2800B43B11 /* WRecipeProfileDataManager.swift in Sources */,
+				714098391D90DC2800B43B11 /* WLocalProfileInteractor.swift in Sources */,
 				717C262D1D88617F00E50459 /* UIColorExtension.swift in Sources */,
 				71DDF6F51D89DA3F001A5646 /* WLoginInteractor.swift in Sources */,
 				718ADC251D8C7F3900982CB8 /* WMenuViewController.swift in Sources */,
@@ -1430,12 +1592,16 @@
 				71DDF6F91D89DA3F001A5646 /* WLoginViewInterface.swift in Sources */,
 				71D314581D884A5C008307DC /* RootWireframe.swift in Sources */,
 				717C26281D885C2500E50459 /* WSlideMenuViewController.swift in Sources */,
+				7140983D1D90DC2800B43B11 /* WLocalProfileViewInterface.swift in Sources */,
 				71DDF7231D89EE76001A5646 /* WProfileViewInterface.swift in Sources */,
 				717C26B01D88A98000E50459 /* WSearchDataManager.swift in Sources */,
 				71DDF6F71D89DA3F001A5646 /* WLoginPresenter.swift in Sources */,
 				717C267C1D889B1600E50459 /* WLocalWireframe.swift in Sources */,
 				718ADC211D8C7F3900982CB8 /* WMenuDataManager.swift in Sources */,
+				7140983C1D90DC2800B43B11 /* WLocalProfileViewController.swift in Sources */,
 				718ADC221D8C7F3900982CB8 /* WMenuInteractor.swift in Sources */,
+				7140983B1D90DC2800B43B11 /* WLocalProfilePresenter.swift in Sources */,
+				714098381D90DC2800B43B11 /* WLocalProfileDataManager.swift in Sources */,
 				717C26B61D88A98000E50459 /* WSearchModuleInterface.swift in Sources */,
 				717C25FA1D88570F00E50459 /* WHomeViewInterface.swift in Sources */,
 				718ADC231D8C7F3900982CB8 /* WMenuModuleInterface.swift in Sources */,
@@ -1447,6 +1613,8 @@
 				717C26B31D88A98000E50459 /* WSearchInteractor.swift in Sources */,
 				71D314251D88496A008307DC /* app.xcdatamodeld in Sources */,
 				717C26351D8861B800E50459 /* StringExtension.swift in Sources */,
+				714098421D90DC2800B43B11 /* WRecipeProfilePresenter.swift in Sources */,
+				714098441D90DC2800B43B11 /* WRecipeProfileViewInterface.swift in Sources */,
 				717C25F91D88570F00E50459 /* WHomeViewController.swift in Sources */,
 				717C26391D8861D000E50459 /* GenericExtensions.swift in Sources */,
 				717C26931D88A1F900E50459 /* WRateModuleInterface.swift in Sources */,

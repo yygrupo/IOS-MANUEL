@@ -121,6 +121,24 @@ class WorcipeAppDependencies: NSObject
         let mapInteractor: WMapInteractor    = WMapInteractor()
         
         // ------------------------------------------------------------------
+        // begin LocalProfile module
+        
+        // instantiate classes
+        let localprofileWireframe: WLocalProfileWireframe      = WLocalProfileWireframe()
+        let localprofilePresenter: WLocalProfilePresenter      = WLocalProfilePresenter()
+        let localprofileDataManager: WLocalProfileDataManager  = WLocalProfileDataManager()
+        let localprofileInteractor: WLocalProfileInteractor    = WLocalProfileInteractor()
+        
+        // ------------------------------------------------------------------
+        // begin RecipeProfile module
+        
+        // instantiate classes
+        let recipeprofileWireframe: WRecipeProfileWireframe      = WRecipeProfileWireframe()
+        let recipeprofilePresenter: WRecipeProfilePresenter      = WRecipeProfilePresenter()
+        let recipeprofileDataManager: WRecipeProfileDataManager  = WRecipeProfileDataManager()
+        let recipeprofileInteractor: WRecipeProfileInteractor    = WRecipeProfileInteractor()
+        
+        // ------------------------------------------------------------------
         // begin Home module
         // presenter <-> wireframe
         homePresenter.wireframe = homeWireframe
@@ -308,6 +326,60 @@ class WorcipeAppDependencies: NSObject
         // configure delegate
         // *** add delegate here if needed
         // end Map module
+        // ------------------------------------------------------------------
+        
+        // ------------------------------------------------------------------
+        // begin LocalProfile module
+        
+        // presenter <-> wireframe
+        localprofilePresenter.wireframe = localprofileWireframe
+        localprofileWireframe.presenter = localprofilePresenter
+        
+        // presenter <-> interactor
+        localprofilePresenter.interactor = localprofileInteractor
+        localprofileInteractor.presenter = localprofilePresenter
+        
+        // interactor -> data_manager
+        localprofileInteractor.dataManager = localprofileDataManager
+        
+        // data_manager -> data_store
+        // *** connect datastore
+        
+        // connect wireframes
+        localprofileWireframe.rootWireframe = rootWireframe
+        // *** connect more wireframes
+        
+        // configure delegate
+        // *** add delegate here if needed
+        
+        // end LocalProfile module
+        // ------------------------------------------------------------------
+        
+        // ------------------------------------------------------------------
+        // begin LocalProfile module
+        
+        // presenter <-> wireframe
+        localprofilePresenter.wireframe = localprofileWireframe
+        localprofileWireframe.presenter = localprofilePresenter
+        
+        // presenter <-> interactor
+        localprofilePresenter.interactor = localprofileInteractor
+        localprofileInteractor.presenter = localprofilePresenter
+        
+        // interactor -> data_manager
+        localprofileInteractor.dataManager = localprofileDataManager
+        
+        // data_manager -> data_store
+        // *** connect datastore
+        
+        // connect wireframes
+        localprofileWireframe.rootWireframe = rootWireframe
+        // *** connect more wireframes
+        
+        // configure delegate
+        // *** add delegate here if needed
+        
+        // end LocalProfile module
         // ------------------------------------------------------------------
     }
 }
