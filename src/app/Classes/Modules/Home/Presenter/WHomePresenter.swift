@@ -15,15 +15,7 @@ class WHomePresenter: NSObject, WHomeModuleInterface
     var userInterface: WHomeViewInterface?
     
     func updateViewWithRecipes(recipes: [WRecipe]) {
-        var categories: [WCategory] = []
-        for recipe in recipes {
-            let category = WCategory(cid: recipe.cid, category_name: recipe.category_name, category_image: recipe.category_image)
-            if categories.contains(category) == false {
-                categories.append(category)
-            }
-        }
-        userInterface?.updateViewWithCategories(categories)
-        userInterface?.updateViewWithRecipes(recipes)
+        
     }
     
     // MARK: - WHomeModuleInterface methods

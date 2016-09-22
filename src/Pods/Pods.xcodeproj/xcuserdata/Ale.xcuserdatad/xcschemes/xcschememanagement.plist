@@ -34,6 +34,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Fakery-Faker.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Fakery.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>FlatUIColors.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -74,6 +84,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SwiftRandom.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SwiftyJSON.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -82,12 +97,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0927957DBBE78B166F56E81DBC23DB03</key>
+		<key>0649976128F4A424757799A06C86A863</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>0BF51E180B44AE95F62ACEC01CF891B1</key>
+		<key>0927957DBBE78B166F56E81DBC23DB03</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -117,6 +132,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>737A999CB6ACDA33E68C696C263EF114</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>75AEEEFD7E431013E8E60009251D5797</key>
 		<dict>
 			<key>primary</key>
@@ -137,7 +157,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CEF4A36BB4BB810D32BC91C97E7A7359</key>
+		<key>A41BF02DC37EDEBCFABC8F478DE68FEF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A4B8A83CAAFB4927AA57AE2DD6508DFB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -152,7 +177,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FC9E1843526CA60E9ED0F9F45F5F6FC5</key>
+		<key>EBAD57DD889F47A23B6121B8E33E0B5C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F8FF3A1872ED0447053DB12F241EED89</key>
 		<dict>
 			<key>primary</key>
 			<true/>

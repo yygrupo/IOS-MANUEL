@@ -429,7 +429,7 @@
                                                         <rect key="frame" x="27" y="60" width="486" height="232"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <prototypes>
-                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="hDa-1Y-l0X">
+                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="localInfoReuseIdentifier" id="hDa-1Y-l0X">
                                                                 <rect key="frame" x="0.0" y="28" width="486" height="44"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hDa-1Y-l0X" id="Nre-aC-1Zp">
@@ -623,7 +623,7 @@
                                                             <constraint firstAttribute="height" constant="1" id="dM9-oZ-xQ6"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4zn-YR-O4b">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4zn-YR-O4b" customClass="GMSMapView">
                                                         <rect key="frame" x="27" y="60" width="486" height="285"/>
                                                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                                                     </view>
@@ -1081,7 +1081,7 @@
                                                         <rect key="frame" x="27" y="60" width="486" height="232"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <prototypes>
-                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="4hg-71-L4N">
+                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="recipeInfoReuseIdentifier" id="4hg-71-L4N">
                                                                 <rect key="frame" x="0.0" y="28" width="486" height="44"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4hg-71-L4N" id="IuG-U1-mOW">
@@ -1268,7 +1268,7 @@
                                                             <constraint firstAttribute="height" constant="1" id="fI4-ge-9rJ"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wjj-v8-pX2">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wjj-v8-pX2" customClass="GMSMapView">
                                                         <rect key="frame" x="27" y="60" width="486" height="285"/>
                                                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                                                     </view>
@@ -1370,6 +1370,7 @@
                         <outlet property="labelDistance" destination="1ZU-wE-0e0" id="p49-I6-8u2"/>
                         <outlet property="labelName" destination="oUO-ui-yfR" id="cbL-RQ-26J"/>
                         <outlet property="labelTitle" destination="dFB-6P-rjC" id="LtE-V6-bGl"/>
+                        <outlet property="mapView" destination="Wjj-v8-pX2" id="dco-gP-HBg"/>
                         <outlet property="tableViewInfo" destination="p6M-JI-Vre" id="BwT-z7-oEa"/>
                         <outlet property="textViewDescription" destination="KzU-P3-VtI" id="UdI-c6-zuj"/>
                         <outlet property="viewDescriptionContainer" destination="PcK-Zz-HQT" id="7tv-Vg-j4o"/>
@@ -2927,7 +2928,19 @@
                     <view key="view" contentMode="scaleToFill" id="ZTd-Ok-jFh">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k9h-Z3-XHX" customClass="GMSMapView">
+                                <rect key="frame" x="30" y="30" width="540" height="540"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="k9h-Z3-XHX" firstAttribute="width" secondItem="ZTd-Ok-jFh" secondAttribute="width" multiplier="0.9" id="0Ro-Xe-Glc"/>
+                            <constraint firstItem="k9h-Z3-XHX" firstAttribute="centerY" secondItem="ZTd-Ok-jFh" secondAttribute="centerY" id="N7h-9j-yU9"/>
+                            <constraint firstItem="k9h-Z3-XHX" firstAttribute="height" secondItem="ZTd-Ok-jFh" secondAttribute="height" multiplier="0.9" id="P7R-NI-NKr"/>
+                            <constraint firstItem="k9h-Z3-XHX" firstAttribute="centerX" secondItem="ZTd-Ok-jFh" secondAttribute="centerX" id="Vs1-Pk-P1M"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YlX-ks-7CF" userLabel="First Responder" sceneMemberID="firstResponder"/>

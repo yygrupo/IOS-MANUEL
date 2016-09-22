@@ -8,6 +8,7 @@
 
 import UIKit
 import Cosmos
+import GoogleMaps
 
 class WRecipeProfileViewController: UIViewController, WRecipeProfileViewInterface
 {
@@ -38,7 +39,7 @@ class WRecipeProfileViewController: UIViewController, WRecipeProfileViewInterfac
     
     // *** MapView
     @IBOutlet weak var viewMapContainer: UIView!
-    @IBOutlet weak var mapView: UIView!
+    @IBOutlet weak var mapView: GMSMapView!
     
     
     var eventHandler: WRecipeProfileModuleInterface?

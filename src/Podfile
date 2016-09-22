@@ -39,6 +39,10 @@ target 'app' do
   
   # Raiting starts
   pod 'Cosmos', '~> 1.2'
+  
+  # Random data generator
+  pod 'Fakery'
+  pod  'SwiftRandom'
 
   target 'appTests' do
     inherit! :search_paths

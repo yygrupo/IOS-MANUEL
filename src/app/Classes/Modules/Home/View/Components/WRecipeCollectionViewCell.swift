@@ -45,12 +45,7 @@ class WRecipeCollectionViewCell: UICollectionViewCell {
     func updateViewWithData(recipe: WRecipe) {
         self.recipe = recipe
         
-        labelRecipeName?.text = recipe.worcipe_heading
         
-        if let imageURL = NSURL(string: recipe.worcipe_image!), placeholder = UIImage(named: "Hourglass Sand Top") {
-            imageViewRecipe!.setImageWithURL(imageURL, placeholder: placeholder)
-        }
-        labelLocalName?.text = recipe.worcipe_description
     }
     
 }

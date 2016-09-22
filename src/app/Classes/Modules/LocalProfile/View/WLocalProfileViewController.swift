@@ -8,6 +8,7 @@
 
 import UIKit
 import Cosmos
+import GoogleMaps
 
 class WLocalProfileViewController: UIViewController, WLocalProfileViewInterface
 {
@@ -30,7 +31,7 @@ class WLocalProfileViewController: UIViewController, WLocalProfileViewInterface
     
     // *** MapView
     @IBOutlet weak var viewMapContainer: UIView!
-    @IBOutlet weak var mapView: UIView!
+    @IBOutlet weak var mapView: GMSMapView!
     
     // MARK: - Events handler
     

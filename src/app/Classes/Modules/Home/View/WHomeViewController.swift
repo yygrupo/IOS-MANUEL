@@ -188,12 +188,12 @@ class WHomeViewController: UIViewController, WHomeViewInterface, UICollectionVie
             isDataFiltered = false
         } else {
             filteredData = recipes.filter({ (recipe) -> Bool in
-                if let searchTerm = self.searchController?.searchBar.text {
-                    let searchTermMatches = self.searchString(recipe.worcipe_heading!, searchTerm: searchTerm).count > 0
-                    if searchTermMatches {
-                        return true
-                    }
-                }
+//                if let searchTerm = self.searchController?.searchBar.text {
+//                    let searchTermMatches = self.searchString(recipe.worcipe_heading!, searchTerm: searchTerm).count > 0
+//                    if searchTermMatches {
+//                        return true
+//                    }
+//                }
                 return false
             })
             isDataFiltered = true
