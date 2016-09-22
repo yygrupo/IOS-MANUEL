@@ -29,6 +29,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Cosmos.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>FlatUIColors.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -82,6 +87,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>0BF51E180B44AE95F62ACEC01CF891B1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>1520003FEBEC114D6C84F832AFEDB994</key>
 		<dict>
 			<key>primary</key>
@@ -98,6 +108,11 @@
 			<true/>
 		</dict>
 		<key>5E50060A9B18001725C409ADDCCEDDD4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>608B49B5DDACC601EE8044A1931993F9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -122,12 +137,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DBA6001481CEA0EBA031CC5C94508FAA</key>
+		<key>CEF4A36BB4BB810D32BC91C97E7A7359</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DC9D137F7D0E6ADF675773CC8DBE3891</key>
+		<key>DBA6001481CEA0EBA031CC5C94508FAA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -137,12 +152,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FB6F01F6DD5F13C45044352CE2414E23</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FBFB8F15509AB48EB645169DF10DB083</key>
+		<key>FC9E1843526CA60E9ED0F9F45F5F6FC5</key>
 		<dict>
 			<key>primary</key>
 			<true/>

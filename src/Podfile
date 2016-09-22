@@ -36,6 +36,9 @@ target 'app' do
   
   # GoogleMaps
   pod 'GoogleMaps'
+  
+  # Raiting starts
+  pod 'Cosmos', '~> 1.2'
 
   target 'appTests' do
     inherit! :search_paths

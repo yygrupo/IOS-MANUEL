@@ -12,7 +12,7 @@ class WLocalProfilePresenter: NSObject, WLocalProfileModuleInterface
 {
     var interactor: WLocalProfileInteractor?
     weak var wireframe: WLocalProfileWireframe?
-    weak var userInterface: WLocalProfileViewInterface?
+    var userInterface: WLocalProfileViewInterface?
 
     // MARK: - WLocalProfileModuleInterface methods
     // implement module interface here

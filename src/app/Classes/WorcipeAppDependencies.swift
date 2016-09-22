@@ -381,5 +381,32 @@ class WorcipeAppDependencies: NSObject
         
         // end LocalProfile module
         // ------------------------------------------------------------------
+        
+        // ------------------------------------------------------------------
+        // begin RecipeProfile module
+        
+        // presenter <-> wireframe
+        recipeprofilePresenter.wireframe = recipeprofileWireframe
+        recipeprofileWireframe.presenter = recipeprofilePresenter
+        
+        // presenter <-> interactor
+        recipeprofilePresenter.interactor = recipeprofileInteractor
+        recipeprofileInteractor.presenter = recipeprofilePresenter
+        
+        // interactor -> data_manager
+        recipeprofileInteractor.dataManager = recipeprofileDataManager
+        
+        // data_manager -> data_store
+        // *** connect datastore
+        
+        // connect wireframes
+        recipeprofileWireframe.rootWireframe = rootWireframe
+        // *** connect more wireframes
+        
+        // configure delegate
+        // *** add delegate here if needed
+        
+        // end LocalProfile module
+        // ------------------------------------------------------------------
     }
 }

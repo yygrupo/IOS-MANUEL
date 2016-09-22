@@ -7,9 +7,33 @@
 //
 
 import UIKit
+import Cosmos
 
 class WLocalProfileViewController: UIViewController, WLocalProfileViewInterface
 {
+    // MARK: - Outlets
+    @IBOutlet weak var imageViewRecipe: UIImageView!
+    @IBOutlet weak var labelName: UILabel!
+    @IBOutlet weak var labelDirection: UILabel!
+    
+    // *** Info View
+    @IBOutlet weak var viewInfoContainer: UIView!
+    @IBOutlet weak var tableViewInfo: UITableView!
+    @IBOutlet weak var viewInfoContainerLayoutConstraint: NSLayoutConstraint!
+    
+    // *** RecipeView
+    @IBOutlet weak var viewRecipeContainer: UIView!
+    @IBOutlet weak var labelRecipeName: UILabel!
+    @IBOutlet weak var labelRecipeCategory: UILabel!
+    @IBOutlet weak var imageViewRecipeInfo: UIImageView!
+    @IBOutlet weak var cosmosViewRaiting: CosmosView?
+    
+    // *** MapView
+    @IBOutlet weak var viewMapContainer: UIView!
+    @IBOutlet weak var mapView: UIView!
+    
+    // MARK: - Events handler
+    
     var eventHandler: WLocalProfileModuleInterface?
 
     // MARK: - View lifecycle
@@ -17,6 +41,8 @@ class WLocalProfileViewController: UIViewController, WLocalProfileViewInterface
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        setupView()
     }
 
     override func viewWillAppear(animated: Bool)
@@ -28,6 +54,13 @@ class WLocalProfileViewController: UIViewController, WLocalProfileViewInterface
     {
         super.viewDidAppear(animated)
     }
+    
+    // MARK: - Private
+    private func setupView() {
+        viewInfoContainer.setupViewForApp()
+        viewRecipeContainer.setupViewForApp()
+        viewMapContainer.setupViewForApp()
+    }
 
     // MARK: - WLocalProfileViewInterface methods
 
@@ -36,5 +69,12 @@ class WLocalProfileViewController: UIViewController, WLocalProfileViewInterface
     // MARK: - Button event handlers
 
     // ** handle UI events here
-
+    
+    @IBAction func exploreToggled(sender: UIButton) {
+        
+    }
+    
+    @IBAction func navigateToggled(sender: UIButton) {
+        
+    }
 }

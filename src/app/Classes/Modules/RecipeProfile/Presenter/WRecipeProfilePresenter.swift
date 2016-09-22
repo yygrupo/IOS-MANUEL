@@ -12,7 +12,7 @@ class WRecipeProfilePresenter: NSObject, WRecipeProfileModuleInterface
 {
     var interactor: WRecipeProfileInteractor?
     weak var wireframe: WRecipeProfileWireframe?
-    weak var userInterface: WRecipeProfileViewInterface?
+    var userInterface: WRecipeProfileViewInterface?
 
     // MARK: - WRecipeProfileModuleInterface methods
     // implement module interface here

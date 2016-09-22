@@ -8,6 +8,7 @@
 
 import UIKit
 import MapleBacon
+import Cosmos
 
 class WRecipeCollectionViewCell: UICollectionViewCell {
     
@@ -17,11 +18,8 @@ class WRecipeCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var labelAddress: UILabel?
     @IBOutlet weak var labelStartDistance: UILabel?
     @IBOutlet weak var labelEndDistance: UILabel?
-    @IBOutlet weak var imageViewStartI: UIImageView?
-    @IBOutlet weak var imageViewStartII: UIImageView?
-    @IBOutlet weak var imageViewStartIII: UIImageView?
-    @IBOutlet weak var imageViewStartIV: UIImageView?
-    @IBOutlet weak var imageViewStartV: UIImageView?
+    @IBOutlet weak var cosmosViewRaiting: CosmosView?
+    
     
     var recipe: WRecipe?
     
