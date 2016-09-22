@@ -31,7 +31,11 @@ target 'app' do
   # Image donwload
   pod 'MapleBacon'
   
+  # Drop down menu
   pod 'AZDropdownMenu'
+  
+  # GoogleMaps
+  pod 'GoogleMaps'
 
   target 'appTests' do
     inherit! :search_paths
