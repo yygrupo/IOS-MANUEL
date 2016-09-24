@@ -10,5 +10,6 @@ import Foundation
 
 protocol WLocalViewInterface
 {
-
+    func updateViewWithLocal(locals: [WLocal])
+    func stopLoadingView()
 }

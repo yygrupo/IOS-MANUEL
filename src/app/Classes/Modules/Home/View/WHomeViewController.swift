@@ -151,6 +151,12 @@ class WHomeViewController: UIViewController, WHomeViewInterface, UICollectionVie
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         let width = ScreenBounds.WIDTH * 0.5 - 14.0
         let height = width * 2
+//        let recipe = recipes[indexPath.row]
+//        if recipe.images?.count > 0 {
+//            let image = UIImage(named: recipe.images![0])
+//            height = width * (image?.size.height)! / (image?.size.width)!
+//        }
+        
         return CGSizeMake(width, height)
     }
     
@@ -188,12 +194,12 @@ class WHomeViewController: UIViewController, WHomeViewInterface, UICollectionVie
             isDataFiltered = false
         } else {
             filteredData = recipes.filter({ (recipe) -> Bool in
-//                if let searchTerm = self.searchController?.searchBar.text {
-//                    let searchTermMatches = self.searchString(recipe.worcipe_heading!, searchTerm: searchTerm).count > 0
-//                    if searchTermMatches {
-//                        return true
-//                    }
-//                }
+                if let searchTerm = self.searchController?.searchBar.text {
+                    let searchTermMatches = self.searchString(recipe.name!, searchTerm: searchTerm).count > 0
+                    if searchTermMatches {
+                        return true
+                    }
+                }
                 return false
             })
             isDataFiltered = true
@@ -220,7 +226,7 @@ class WHomeViewController: UIViewController, WHomeViewInterface, UICollectionVie
         
         var categorieNames: [String] = []
         for category in categories {
-            categorieNames.append(category.category_name!)
+            categorieNames.append(category.name!)
         }
         
         let leftTitles = categorieNames

@@ -17,6 +17,7 @@ PODS:
   - MapleBacon (2.0.8)
   - MBProgressHUD (1.0.0)
   - SlideMenuControllerSwift (2.2.2)
+  - SwiftLocation (1.0.0)
   - SwiftRandom (0.1.7)
   - SwiftyJSON (2.3.2)
 
@@ -32,6 +33,7 @@ DEPENDENCIES:
   - MapleBacon
   - MBProgressHUD
   - SlideMenuControllerSwift
+  - SwiftLocation
   - SwiftRandom
   - SwiftyJSON
 
@@ -47,9 +49,10 @@ SPEC CHECKSUMS:
   MapleBacon: 32e3590e1730485b93f450283ff242f9444efc12
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   SlideMenuControllerSwift: e257221100c39d49edccaaeb0238b55a0c67953a
+  SwiftLocation: b01455c5ff67ac66b0696b70ca9d29bda646ec5a
   SwiftRandom: a03b68cbcda1b03d0fef5a1b87296f9500b6eac3
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
-PODFILE CHECKSUM: 3ca6318f047388f3b3c9ae27d2c532357b2f9f7c
+PODFILE CHECKSUM: b931d00b9166c57dffeb9a8c5cb301d9d85ec330
 
 COCOAPODS: 1.0.1

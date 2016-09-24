@@ -15,7 +15,11 @@ class WHomePresenter: NSObject, WHomeModuleInterface
     var userInterface: WHomeViewInterface?
     
     func updateViewWithRecipes(recipes: [WRecipe]) {
-        
+        userInterface?.updateViewWithRecipes(recipes)
+    }
+    
+    func updateViewWithCategories(categories: [WCategory]) {
+        userInterface?.updateViewWithCategories(categories)
     }
     
     // MARK: - WHomeModuleInterface methods

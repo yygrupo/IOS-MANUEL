@@ -29,7 +29,7 @@ class WMenuPresenter: NSObject, WMenuModuleInterface
             wireframe?.presentRateViewController()
             break
         case 3:
-            wireframe?.presentLocalViewController()
+            wireframe?.presentRecipesRateViewController()
             break
         case 4:
             // Same that home

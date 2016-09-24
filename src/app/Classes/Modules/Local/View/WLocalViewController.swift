@@ -7,27 +7,45 @@
 //
 
 import UIKit
+import BRYXBanner
+import FlatUIColors
+import MBProgressHUD
 
-class WLocalViewController: UIViewController, WLocalViewInterface
+class WLocalViewController: UIViewController, WLocalViewInterface, UIPopoverPresentationControllerDelegate
 {
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var viewSearchBarContainer: UIView?
+    
     var eventHandler: WLocalModuleInterface?
-
+    
+    // MARK: - Attr
+    var locals = [WLocal]()
+    var isDataFiltered: Bool = false
+    var filteredData: [WLocal] = []
+    var searchController: UISearchController?
+    var loadingView: MBProgressHUD?
+    
     // MARK: - View lifecycle
-
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
         setupView()
     }
-
+    
     override func viewWillAppear(animated: Bool)
     {
         super.viewWillAppear(animated)
     }
-
+    
     override func viewDidAppear(animated: Bool)
     {
         super.viewDidAppear(animated)
+        
+        startLoadingView()
+        dispatch_async(dispatch_get_main_queue(),{
+            self.eventHandler?.updateView()
+        })
     }
     
     // MARK: - Private
@@ -41,17 +59,139 @@ class WLocalViewController: UIViewController, WLocalViewInterface
         
         let menuBarButtonItem: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "Menu"), style: .Plain, target: self, action: #selector(WLocalViewController.showMenuAction))
         self.navigationItem.leftBarButtonItem = menuBarButtonItem
+        
+        UIApplication.sharedApplication().statusBarHidden = false
+        
+        let sortBarButtonItem: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "Sorting Arrows"), style: .Plain, target: self, action: #selector(WLocalViewController.sortAction(_:)))
+        
+        let optionsBarButtonItem: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "Menu Circle"), style: .Plain, target: self, action: #selector(WLocalViewController.filtersAction(_:)))
+        
+        self.navigationItem.rightBarButtonItems = [optionsBarButtonItem, sortBarButtonItem]
+        
+        searchController = ({
+            let searchController = UISearchController(searchResultsController: nil)
+            searchController.searchResultsUpdater = self
+            searchController.hidesNavigationBarDuringPresentation = true
+            searchController.dimsBackgroundDuringPresentation = false
+            searchController.searchBar.tintColor            = UIColor.whiteColor()
+            searchController.searchBar.barTintColor         = AppColors.blue
+            searchController.searchBar.placeholder         = "Escriba la frase..."
+            
+            //setup the search bar
+            searchController.searchBar.autoresizingMask = [UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleHeight]
+            self.viewSearchBarContainer?.addSubview(searchController.searchBar)
+            searchController.searchBar.sizeToFit()
+            
+            return searchController
+        })()
+        
+        isDataFiltered = false
     }
-
+    
+    func startLoadingView() {
+        if loadingView != nil {
+            loadingView?.hideAnimated(true)
+        }
+        loadingView = MBProgressHUD.showHUDAddedTo((self.navigationController?.view)!, animated: true)
+        loadingView?.mode = MBProgressHUDMode.Indeterminate
+    }
+    
     // MARK: - WLocalViewInterface methods
-
+    
     // *** implement view_interface methods here
-
+    func stopLoadingView() {
+        if loadingView != nil {
+            loadingView?.hideAnimated(true)
+        }
+    }
+    
+    func updateViewWithLocal(locals: [WLocal]) {
+        stopLoadingView()
+        self.locals = locals
+        tableView.reloadData()
+    }
+    
     // MARK: - Button event handlers
-
+    
     // ** handle UI events here
     
     func showMenuAction() {
         self.slideMenuController()?.openLeft()
+    }
+    
+    func filtersAction(sender: UIBarButtonItem) {
+
+    }
+    
+    func sortAction(sender: UIBarButtonItem) {
+        
+    }
+}
+
+extension WLocalViewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let numberOfItems = isDataFiltered ? filteredData.count : locals.count
+        return numberOfItems
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell: WLocalTableViewCell = tableView.dequeueReusableCellWithIdentifier("localResuseIdentifier", forIndexPath: indexPath) as! WLocalTableViewCell
+        cell.updateViewWithLocal(locals[indexPath.row])
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+}
+
+extension WLocalViewController: UISearchControllerDelegate, UISearchResultsUpdating {
+    func searchString(string: String, searchTerm:String) -> Array<AnyObject>
+    {
+        var matches:Array<AnyObject> = []
+        do {
+            let regex = try NSRegularExpression(pattern: searchTerm, options: [.CaseInsensitive, .AllowCommentsAndWhitespace])
+            let range = NSMakeRange(0, string.characters.count)
+            matches = regex.matchesInString(string, options: [], range: range)
+        } catch _ {
+        }
+        return matches
+    }
+    
+    func searchIsEmpty() -> Bool
+    {
+        if let searchTerm = self.searchController?.searchBar.text {
+            return searchTerm.isEmpty
+        }
+        return true
+    }
+    
+    //MARK:UISearchResultsUpdating
+    
+    func updateSearchResultsForSearchController(searchController: UISearchController)
+    {
+        filterData()
+        tableView.reloadData()
+    }
+    
+    func filterData() {
+        if searchIsEmpty() {
+            isDataFiltered = false
+        } else {
+            filteredData = locals.filter({ (local) -> Bool in
+                if let searchTerm = self.searchController?.searchBar.text {
+                    let searchTermMatches = self.searchString(local.name!, searchTerm: searchTerm).count > 0
+                    if searchTermMatches {
+                        return true
+                    }
+                }
+                return false
+            })
+            isDataFiltered = true
+        }
     }
 }

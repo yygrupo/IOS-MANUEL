@@ -10,7 +10,7 @@ import Foundation
 
 protocol WLocalModuleInterface
 {
-
+    func updateView()
 }
 
 protocol WLocalModuleDelegate

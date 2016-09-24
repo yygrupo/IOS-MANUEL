@@ -42,7 +42,10 @@ target 'app' do
   
   # Random data generator
   pod 'Fakery'
-  pod  'SwiftRandom'
+  pod 'SwiftRandom'
+  
+  # Location
+  pod 'SwiftLocation'
 
   target 'appTests' do
     inherit! :search_paths

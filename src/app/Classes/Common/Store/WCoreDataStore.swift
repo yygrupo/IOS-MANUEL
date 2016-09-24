@@ -72,4 +72,52 @@ class WCoreDataStore: NSObject {
             }
         }
     }
+    
+    // MARK: - Retrieve data from database
+    
+    /// Retrieve any data from local database
+    func fetchEntriesForEntityName(entity: String, predicate: NSPredicate?, sortDescriptors: [NSSortDescriptor], completion: (results: [AnyObject]) -> Void) {
+        let fetch_request: NSFetchRequest = NSFetchRequest(entityName: entity)
+        
+        if predicate != nil {
+            fetch_request.predicate = predicate
+        }
+        
+        fetch_request.sortDescriptors = sortDescriptors
+        fetch_request.returnsObjectsAsFaults = false
+        
+        managedObjectContext.performBlock {
+            do {
+                let results = try self.managedObjectContext.executeFetchRequest(fetch_request)
+                completion(results: results)
+                // success ...
+            } catch let error as NSError {
+                // failure
+                print("Fetch failed: \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    // MARK: - Functions for create a single entity
+    
+    /// Create an Local entity
+    func newManagedLocal() -> NSManagedLocal {
+        let entityDescription = NSEntityDescription.entityForName("Local", inManagedObjectContext: self.managedObjectContext)
+        let managedEntity : NSManagedLocal = NSManagedObject.init(entity: entityDescription!, insertIntoManagedObjectContext: self.managedObjectContext) as! NSManagedLocal
+        return managedEntity
+    }
+    
+    /// Create an Recipe entity
+    func newManagedRecipe() -> NSManagedRecipe {
+        let entityDescription = NSEntityDescription.entityForName("Recipe", inManagedObjectContext: self.managedObjectContext)
+        let managedEntity : NSManagedRecipe = NSManagedObject.init(entity: entityDescription!, insertIntoManagedObjectContext: self.managedObjectContext) as! NSManagedRecipe
+        return managedEntity
+    }
+    
+    /// Create an Category entity
+    func newManagedCategory() -> NSManagedCategory {
+        let entityDescription = NSEntityDescription.entityForName("Category", inManagedObjectContext: self.managedObjectContext)
+        let managedEntity : NSManagedCategory = NSManagedObject.init(entity: entityDescription!, insertIntoManagedObjectContext: self.managedObjectContext) as! NSManagedCategory
+        return managedEntity
+    }
 }

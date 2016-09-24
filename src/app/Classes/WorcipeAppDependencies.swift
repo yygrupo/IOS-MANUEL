@@ -19,6 +19,7 @@ class WorcipeAppDependencies: NSObject
 
         let obj = WorcipeAppDependencies()
         obj.configureDependencies(window)
+        WMainBoard.sharedInstance.startUpdatingLocation()
 
         return obj
     }
@@ -139,6 +140,15 @@ class WorcipeAppDependencies: NSObject
         let recipeprofileInteractor: WRecipeProfileInteractor    = WRecipeProfileInteractor()
         
         // ------------------------------------------------------------------
+        // begin RecipeRated module
+        
+        // instantiate classes
+        let reciperatedWireframe: WRecipeRatedWireframe      = WRecipeRatedWireframe()
+        let reciperatedPresenter: WRecipeRatedPresenter      = WRecipeRatedPresenter()
+        let reciperatedDataManager: WRecipeRatedDataManager  = WRecipeRatedDataManager()
+        let reciperatedInteractor: WRecipeRatedInteractor    = WRecipeRatedInteractor()
+        
+        // ------------------------------------------------------------------
         // begin Home module
         // presenter <-> wireframe
         homePresenter.wireframe = homeWireframe
@@ -149,6 +159,7 @@ class WorcipeAppDependencies: NSObject
         // interactor -> data_manager
         homeInteractor.dataManager = homeDataManager
         // data_manager -> data_store
+        homeDataManager.dataStore = dataStore
         // *** connect datastore
         // connect wireframes
         homeWireframe!.rootWireframe = rootWireframe
@@ -183,6 +194,7 @@ class WorcipeAppDependencies: NSObject
         menuWireframe.searchWireframe = searchWireframe
         menuWireframe.profileWireframe = profileWireframe
         menuWireframe.mapWireframe = mapWireframe
+        menuWireframe.reciperatedWireframe = reciperatedWireframe
         // configure delegate
         // *** add delegate here if needed
         // end Menu module
@@ -407,6 +419,33 @@ class WorcipeAppDependencies: NSObject
         // *** add delegate here if needed
         
         // end LocalProfile module
+        // ------------------------------------------------------------------
+        
+        // ------------------------------------------------------------------
+        // begin RecipeRated module
+        
+        // presenter <-> wireframe
+        reciperatedPresenter.wireframe = reciperatedWireframe
+        reciperatedWireframe.presenter = reciperatedPresenter
+        
+        // presenter <-> interactor
+        reciperatedPresenter.interactor = reciperatedInteractor
+        reciperatedInteractor.presenter = reciperatedPresenter
+        
+        // interactor -> data_manager
+        reciperatedInteractor.dataManager = reciperatedDataManager
+        
+        // data_manager -> data_store
+        // *** connect datastore
+        
+        // connect wireframes
+        reciperatedWireframe.rootWireframe = rootWireframe
+        // *** connect more wireframes
+        
+        // configure delegate
+        // *** add delegate here if needed
+        
+        // end RecipeRated module
         // ------------------------------------------------------------------
     }
 }
