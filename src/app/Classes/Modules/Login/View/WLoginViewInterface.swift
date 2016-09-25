@@ -10,5 +10,7 @@ import Foundation
 
 protocol WLoginViewInterface
 {
-
+    func stopLoadingView()
+    func userNotFound()
+    func wrongPassword()
 }

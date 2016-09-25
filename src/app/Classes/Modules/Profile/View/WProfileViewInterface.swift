@@ -10,5 +10,6 @@ import Foundation
 
 protocol WProfileViewInterface
 {
-
+    func stopLoadingView()
+    func updateViewWithUser(user: WUser)
 }

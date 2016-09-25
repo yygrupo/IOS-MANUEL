@@ -12,4 +12,14 @@ class WSearchInteractor: NSObject
 {
     weak var presenter: WSearchPresenter?
     var dataManager: WSearchDataManager?
+    
+    func findCategories() {
+        dataManager?.findCategories({ (categories) in
+            self.presenter?.updateViewWithCategories(categories!)
+        })
+    }
+    
+    func doSearchWithCriteria(searchCriteria: WSearchCriteria) {
+        
+    }
 }

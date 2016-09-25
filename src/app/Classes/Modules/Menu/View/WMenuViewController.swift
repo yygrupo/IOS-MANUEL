@@ -22,13 +22,12 @@ class WMenuViewController: UIViewController, WMenuViewInterface, UITableViewDele
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
-        setupView()
     }
 
     override func viewWillAppear(animated: Bool)
     {
         super.viewWillAppear(animated)
+        setupView()
     }
 
     override func viewDidAppear(animated: Bool)
@@ -43,6 +42,11 @@ class WMenuViewController: UIViewController, WMenuViewInterface, UITableViewDele
     func setupView() {
         itemNames = ["Tapas".localized, "Locáis".localized, "Puntuar".localized, "Puntuados".localized, "Quero probar".localized, "Mapa".localized, "Buscar".localized, "Acceder".localized, "Novas".localized, "Sobre PonteDeTapas".localized, "Termos en Condicións".localized]
         itemImages = ["tapas", "Shop", "Thumb Up", "Checked Checkbox 2", "Like", "Marker", "Search", "User", "News"]
+        
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        if userDefaults.stringForKey("lastUser") != nil {
+            itemNames[7] = "Perfil".localized
+        }
         
         tableView?.delegate = self
         tableView?.dataSource = self

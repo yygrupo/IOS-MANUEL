@@ -15,16 +15,57 @@ class WLocalInteractor: NSObject
     var currentLocals = [WLocal]()
     var localStack = [WLocal]()
     
-    func findLocals() {
-        let locals = WMainBoard.sharedInstance.locals
-        if locals.count > 0 {
-            presenter?.updateViewWithLocal(locals)
-        } else {
-            dataManager?.findLocals({ (locals) in
-                self.localStack = locals!
-                self.findRecipesFromLocal()
-            })
+    var recipeStack = [WRecipe]()
+    var recipesToShow = [WRecipe]()
+    
+    func findLocalsWithCategory(category: String) {
+        dataManager?.findRecipesWithCategory(category, completion: { (recipes) in
+            self.recipeStack = recipes!
+            self.localStack.removeAll()
+            self.currentLocals.removeAll()
+            self.findLocalFromRecipe()
+        })
+    }
+    
+    func findLocalFromRecipe() {
+        if recipeStack.count == 0 {
+            for local in currentLocals {
+                var currentLocal = local
+                currentLocal.recipes = [WRecipe]()
+                for recipe in recipesToShow {
+                    if recipe.local?.id == local.id {
+                        currentLocal.recipes?.append(recipe)
+                    }
+                }
+                localStack.append(currentLocal)
+            }
+            currentLocals.removeAll()
+            presenter?.updateViewWithLocal(localStack)
+            WMainBoard.sharedInstance.locals = localStack
+            recipesToShow.removeAll()
+            recipeStack.removeAll()
+            return
         }
+        
+        var recipe = recipeStack.removeFirst()
+        dataManager?.findLocalFromRecipe(recipe, completion: { (local) in
+            recipe.local = local
+            self.recipesToShow.append(recipe)
+            self.currentLocals.append(local!)
+            self.findLocalFromRecipe()
+        })
+    }
+    
+    func findLocals() {
+        dataManager?.findCategories({ (categories) in
+            WMainBoard.sharedInstance.categories = categories!
+            self.presenter?.updateViewWithCategories(categories!)
+        })
+        
+        dataManager?.findLocals({ (locals) in
+            self.localStack = locals!
+            self.findRecipesFromLocal()
+        })
     }
     
     func findRecipesFromLocal() {

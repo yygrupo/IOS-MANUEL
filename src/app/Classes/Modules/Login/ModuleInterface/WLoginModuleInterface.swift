@@ -10,7 +10,8 @@ import Foundation
 
 protocol WLoginModuleInterface
 {
-
+    func doLogin(user: String, password: String)
+    func showRegisterForm()
 }
 
 protocol WLoginModuleDelegate

@@ -14,7 +14,7 @@ import IQKeyboardManagerSwift
 class WorcipeAppDependencies: NSObject
 {
     var dataStore : WCoreDataStore?
-    var homeWireframe: WHomeWireframe?
+    var startWireframe: WStartWireframe?
 
     class func initWithWindow(window: UIWindow) -> WorcipeAppDependencies
     {
@@ -33,7 +33,8 @@ class WorcipeAppDependencies: NSObject
     func installRootViewController()
     {
         // *** present first wireframe here
-        homeWireframe?.presentSelfViewControllerAsRootViewController()
+//        homeWireframe?.presentSelfViewControllerAsRootViewController()
+        startWireframe?.presentSelfViewControllerAsRootViewController()
     }
 
     func configureDependencies(window: UIWindow)
@@ -50,7 +51,7 @@ class WorcipeAppDependencies: NSObject
         // begin Home module
         
         // instantiate classes
-        homeWireframe      = WHomeWireframe()
+        let homeWireframe: WHomeWireframe      = WHomeWireframe()
         let homePresenter: WHomePresenter      = WHomePresenter()
         let homeDataManager: WHomeDataManager  = WHomeDataManager()
         let homeInteractor: WHomeInteractor    = WHomeInteractor()
@@ -155,10 +156,64 @@ class WorcipeAppDependencies: NSObject
         let reciperatedInteractor: WRecipeRatedInteractor    = WRecipeRatedInteractor()
         
         // ------------------------------------------------------------------
+        // begin News module
+        
+        // instantiate classes
+        let newsWireframe: WNewsWireframe      = WNewsWireframe()
+        let newsPresenter: WNewsPresenter      = WNewsPresenter()
+        let newsDataManager: WNewsDataManager  = WNewsDataManager()
+        let newsInteractor: WNewsInteractor    = WNewsInteractor()
+        
+        // ------------------------------------------------------------------
+        // begin About module
+        
+        // instantiate classes
+        let aboutWireframe: WAboutWireframe      = WAboutWireframe()
+        let aboutPresenter: WAboutPresenter      = WAboutPresenter()
+        let aboutDataManager: WAboutDataManager  = WAboutDataManager()
+        let aboutInteractor: WAboutInteractor    = WAboutInteractor()
+        
+        // ------------------------------------------------------------------
+        // begin Terms module
+        
+        // instantiate classes
+        let termsWireframe: WTermsWireframe      = WTermsWireframe()
+        let termsPresenter: WTermsPresenter      = WTermsPresenter()
+        let termsDataManager: WTermsDataManager  = WTermsDataManager()
+        let termsInteractor: WTermsInteractor    = WTermsInteractor()
+        
+        // ------------------------------------------------------------------
+        // begin Taste module
+        
+        // instantiate classes
+        let tasteWireframe: WTasteWireframe      = WTasteWireframe()
+        let tastePresenter: WTastePresenter      = WTastePresenter()
+        let tasteDataManager: WTasteDataManager  = WTasteDataManager()
+        let tasteInteractor: WTasteInteractor    = WTasteInteractor()
+        
+        // ------------------------------------------------------------------
+        // begin SearchResult module
+        
+        // instantiate classes
+        let searchresultWireframe: WSearchResultWireframe      = WSearchResultWireframe()
+        let searchresultPresenter: WSearchResultPresenter      = WSearchResultPresenter()
+        let searchresultDataManager: WSearchResultDataManager  = WSearchResultDataManager()
+        let searchresultInteractor: WSearchResultInteractor    = WSearchResultInteractor()
+        
+        // ------------------------------------------------------------------
+        // begin Start module
+        
+        // instantiate classes
+        startWireframe      = WStartWireframe()
+        let startPresenter: WStartPresenter      = WStartPresenter()
+        let startDataManager: WStartDataManager  = WStartDataManager()
+        let startInteractor: WStartInteractor    = WStartInteractor()
+        
+        // ------------------------------------------------------------------
         // begin Home module
         // presenter <-> wireframe
         homePresenter.wireframe = homeWireframe
-        homeWireframe!.presenter = homePresenter
+        homeWireframe.presenter = homePresenter
         // presenter <-> interactor
         homePresenter.interactor = homeInteractor
         homeInteractor.presenter = homePresenter
@@ -168,10 +223,9 @@ class WorcipeAppDependencies: NSObject
         homeDataManager.dataStore = dataStore
         // *** connect datastore
         // connect wireframes
-        homeWireframe!.rootWireframe = rootWireframe
+        homeWireframe.rootWireframe = rootWireframe
         // *** connect more wireframes
-        rootWireframe.homeWireframe = homeWireframe
-        homeWireframe?.recipeprofileWireframe = recipeprofileWireframe
+        homeWireframe.recipeprofileWireframe = recipeprofileWireframe
         // configure delegate
         // *** add delegate here if needed
         // end Home module
@@ -202,6 +256,11 @@ class WorcipeAppDependencies: NSObject
         menuWireframe.profileWireframe = profileWireframe
         menuWireframe.mapWireframe = mapWireframe
         menuWireframe.reciperatedWireframe = reciperatedWireframe
+        menuWireframe.newsWireframe = newsWireframe
+        menuWireframe.aboutWireframe = aboutWireframe
+        menuWireframe.termsWireframe = termsWireframe
+        menuWireframe.tasteWireframe = tasteWireframe
+        menuWireframe.profileWireframe = profileWireframe
         // configure delegate
         // *** add delegate here if needed
         // end Menu module
@@ -262,9 +321,11 @@ class WorcipeAppDependencies: NSObject
         searchInteractor.dataManager = searchDataManager
         // data_manager -> data_store
         // *** connect datastore
+        searchDataManager.dataStore = dataStore
         // connect wireframes
         searchWireframe.rootWireframe = rootWireframe
         // *** connect more wireframes
+        searchWireframe.searchresultWireframe = searchresultWireframe
         // configure delegate
         // *** add delegate here if needed
         // end Search module
@@ -285,6 +346,8 @@ class WorcipeAppDependencies: NSObject
         // connect wireframes
         loginWireframe.rootWireframe = rootWireframe
         // *** connect more wireframes
+        loginWireframe.profileWireframe = profileWireframe
+        loginWireframe.registerWireframe = registerWireframe
         // configure delegate
         // *** add delegate here if needed
         // end Login module
@@ -305,6 +368,7 @@ class WorcipeAppDependencies: NSObject
         // connect wireframes
         registerWireframe.rootWireframe = rootWireframe
         // *** connect more wireframes
+        registerWireframe.profileWireframe = profileWireframe
         // configure delegate
         // *** add delegate here if needed
         // end Register module
@@ -325,6 +389,7 @@ class WorcipeAppDependencies: NSObject
         // connect wireframes
         profileWireframe.rootWireframe = rootWireframe
         // *** connect more wireframes
+        profileWireframe.loginWireframe = loginWireframe
         // configure delegate
         // *** add delegate here if needed
         // end Profile module
@@ -457,6 +522,168 @@ class WorcipeAppDependencies: NSObject
         // *** add delegate here if needed
         
         // end RecipeRated module
+        // ------------------------------------------------------------------
+        
+        // ------------------------------------------------------------------
+        // begin News module
+        
+        // presenter <-> wireframe
+        newsPresenter.wireframe = newsWireframe
+        newsWireframe.presenter = newsPresenter
+        
+        // presenter <-> interactor
+        newsPresenter.interactor = newsInteractor
+        newsInteractor.presenter = newsPresenter
+        
+        // interactor -> data_manager
+        newsInteractor.dataManager = newsDataManager
+        
+        // data_manager -> data_store
+        // *** connect datastore
+        
+        // connect wireframes
+        newsWireframe.rootWireframe = rootWireframe
+        // *** connect more wireframes
+        
+        // configure delegate
+        // *** add delegate here if needed
+        
+        // end News module
+        // ------------------------------------------------------------------
+        
+        // ------------------------------------------------------------------
+        // begin About module
+        
+        // presenter <-> wireframe
+        aboutPresenter.wireframe = aboutWireframe
+        aboutWireframe.presenter = aboutPresenter
+        
+        // presenter <-> interactor
+        aboutPresenter.interactor = aboutInteractor
+        aboutInteractor.presenter = aboutPresenter
+        
+        // interactor -> data_manager
+        aboutInteractor.dataManager = aboutDataManager
+        
+        // data_manager -> data_store
+        // *** connect datastore
+        
+        // connect wireframes
+        aboutWireframe.rootWireframe = rootWireframe
+        // *** connect more wireframes
+        
+        // configure delegate
+        // *** add delegate here if needed
+        
+        // end About module
+        // ------------------------------------------------------------------
+        
+        // ------------------------------------------------------------------
+        // begin Terms module
+        
+        // presenter <-> wireframe
+        termsPresenter.wireframe = termsWireframe
+        termsWireframe.presenter = termsPresenter
+        
+        // presenter <-> interactor
+        termsPresenter.interactor = termsInteractor
+        termsInteractor.presenter = termsPresenter
+        
+        // interactor -> data_manager
+        termsInteractor.dataManager = termsDataManager
+        
+        // data_manager -> data_store
+        // *** connect datastore
+        
+        // connect wireframes
+        termsWireframe.rootWireframe = rootWireframe
+        // *** connect more wireframes
+        
+        // configure delegate
+        // *** add delegate here if needed
+        
+        // end Terms module
+        // ------------------------------------------------------------------
+        
+        // ------------------------------------------------------------------
+        // begin Taste module
+        
+        // presenter <-> wireframe
+        tastePresenter.wireframe = tasteWireframe
+        tasteWireframe.presenter = tastePresenter
+        
+        // presenter <-> interactor
+        tastePresenter.interactor = tasteInteractor
+        tasteInteractor.presenter = tastePresenter
+        
+        // interactor -> data_manager
+        tasteInteractor.dataManager = tasteDataManager
+        
+        // data_manager -> data_store
+        // *** connect datastore
+        tasteDataManager.dataStore = dataStore
+        // connect wireframes
+        tasteWireframe.rootWireframe = rootWireframe
+        // *** connect more wireframes
+        tasteWireframe.recipeprofileWireframe = recipeprofileWireframe
+        // configure delegate
+        // *** add delegate here if needed
+        
+        // end Taste module
+        // ------------------------------------------------------------------
+        
+        // ------------------------------------------------------------------
+        // begin SearchResult module
+        
+        // presenter <-> wireframe
+        searchresultPresenter.wireframe = searchresultWireframe
+        searchresultWireframe.presenter = searchresultPresenter
+        
+        // presenter <-> interactor
+        searchresultPresenter.interactor = searchresultInteractor
+        searchresultInteractor.presenter = searchresultPresenter
+        
+        // interactor -> data_manager
+        searchresultInteractor.dataManager = searchresultDataManager
+        
+        // data_manager -> data_store
+        // *** connect datastore
+        searchresultDataManager.dataStore = dataStore
+        // connect wireframes
+        searchresultWireframe.rootWireframe = rootWireframe
+        // *** connect more wireframes
+        searchresultWireframe.recipeprofileWireframe = recipeprofileWireframe
+        // configure delegate
+        // *** add delegate here if needed
+        
+        // end SearchResult module
+        // ------------------------------------------------------------------
+        
+        // ------------------------------------------------------------------
+        // begin Start module
+        
+        // presenter <-> wireframe
+        startPresenter.wireframe = startWireframe
+        startWireframe!.presenter = startPresenter
+        
+        // presenter <-> interactor
+        startPresenter.interactor = startInteractor
+        startInteractor.presenter = startPresenter
+        
+        // interactor -> data_manager
+        startInteractor.dataManager = startDataManager
+        
+        // data_manager -> data_store
+        // *** connect datastore
+        
+        // connect wireframes
+        startWireframe!.rootWireframe = rootWireframe
+        // *** connect more wireframes
+        startWireframe?.homeWireframe = homeWireframe
+        // configure delegate
+        // *** add delegate here if needed
+        
+        // end Start module
         // ------------------------------------------------------------------
     }
 }

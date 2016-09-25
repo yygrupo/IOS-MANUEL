@@ -12,4 +12,5 @@ protocol WLocalViewInterface
 {
     func updateViewWithLocal(locals: [WLocal])
     func stopLoadingView()
+    func updateViewWithCategories(categories: [WCategory])
 }

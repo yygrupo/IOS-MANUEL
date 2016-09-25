@@ -10,6 +10,7 @@ import UIKit
 import BRYXBanner
 import FlatUIColors
 import MBProgressHUD
+import CoreLocation
 
 class WLocalViewController: UIViewController, WLocalViewInterface, UIPopoverPresentationControllerDelegate
 {
@@ -24,6 +25,7 @@ class WLocalViewController: UIViewController, WLocalViewInterface, UIPopoverPres
     var filteredData: [WLocal] = []
     var searchController: UISearchController?
     var loadingView: MBProgressHUD?
+    var categories: [WCategory] = []
     
     // MARK: - View lifecycle
     
@@ -77,7 +79,7 @@ class WLocalViewController: UIViewController, WLocalViewInterface, UIPopoverPres
             searchController.dimsBackgroundDuringPresentation = false
             searchController.searchBar.tintColor            = UIColor.whiteColor()
             searchController.searchBar.barTintColor         = AppColors.blueLight
-            searchController.searchBar.placeholder         = "Escriba la frase..."
+            searchController.searchBar.placeholder         = "Escriba la frase...".localized
             
             //setup the search bar
             searchController.searchBar.autoresizingMask = [UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleHeight]
@@ -98,6 +100,13 @@ class WLocalViewController: UIViewController, WLocalViewInterface, UIPopoverPres
         loadingView?.mode = MBProgressHUDMode.Indeterminate
     }
     
+    // MARK: - UIPopoverPresentationControllerDelegate
+    
+    func adaptivePresentationStyleForPresentationController(
+        controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .None
+    }
+    
     // MARK: - WLocalViewInterface methods
     
     // *** implement view_interface methods here
@@ -108,9 +117,13 @@ class WLocalViewController: UIViewController, WLocalViewInterface, UIPopoverPres
     }
     
     func updateViewWithLocal(locals: [WLocal]) {
-        stopLoadingView()
         self.locals = locals
-        tableView.reloadData()
+        sortByDistance()
+        stopLoadingView()
+    }
+    
+    func updateViewWithCategories(categories: [WCategory]) {
+        self.categories = categories
     }
     
     // MARK: - Button event handlers
@@ -122,15 +135,109 @@ class WLocalViewController: UIViewController, WLocalViewInterface, UIPopoverPres
     }
     
     func filtersAction(sender: UIBarButtonItem) {
-
+        let sender_view = sender.valueForKey("view") as! UIView
+        
+        var menuItems = [WMenuItem(name: "Todas".localized, image: UIImage(named: "logo-min")!)]
+        for category in categories {
+            menuItems.append(WMenuItem(name: category.name!, image: UIImage(named: category.image!)!))
+        }
+        
+        let menu = WSortSelectionTableViewController(style: .Plain, menuItems: menuItems)
+        menu.view.tag = 50
+        menu.delegate = self
+        
+        menu.modalPresentationStyle = .Popover
+        menu.preferredContentSize = CGSizeMake(200, 140)
+        
+        let popoverMenuViewController = menu.popoverPresentationController
+        popoverMenuViewController?.permittedArrowDirections = UIPopoverArrowDirection(rawValue: 0)
+        popoverMenuViewController?.delegate = self
+        popoverMenuViewController?.sourceView = self.navigationController?.navigationBar
+        popoverMenuViewController?.sourceRect = CGRect(
+            x: sender_view.center.x + 20,
+            y: sender_view.center.y + 100,
+            width: 1,
+            height: 1)
+        presentViewController(
+            menu,
+            animated: true,
+            completion: nil)
     }
     
     func sortAction(sender: UIBarButtonItem) {
+        let sender_view = sender.valueForKey("view") as! UIView
         
+        let menuItems = [WMenuItem(name: "Proximidade".localized, image: UIImage(named: "Marker Fill Gray")!), WMenuItem(name: "Alfabéticamente".localized, image: UIImage(named: "Alphabetical Sorting")!)]
+        
+        let menu = WSortSelectionTableViewController(style: .Plain, menuItems: menuItems)
+        menu.view.tag = 100
+        menu.delegate = self
+        
+        menu.modalPresentationStyle = .Popover
+        menu.preferredContentSize = CGSizeMake(200, 70)
+        
+        let popoverMenuViewController = menu.popoverPresentationController
+        popoverMenuViewController?.permittedArrowDirections = UIPopoverArrowDirection(rawValue: 0)
+        popoverMenuViewController?.delegate = self
+        popoverMenuViewController?.sourceView = self.navigationController?.navigationBar
+        popoverMenuViewController?.sourceRect = CGRect(
+            x: sender_view.center.x + 20,
+            y: sender_view.center.y + 65,
+            width: 1,
+            height: 1)
+        presentViewController(
+            menu,
+            animated: true,
+            completion: nil)
     }
     
     func showMap(sender: UIBarButtonItem) {
         eventHandler?.showMap()
+    }
+    
+    func sortAlpa() {
+        let result = locals.sort { $0.name < $1.name }
+        locals.removeAll()
+        locals = result
+        tableView.reloadData()
+    }
+    
+    func sortByDistance() {
+        let currentLocation = WMainBoard.sharedInstance.currentLocation
+        let result = locals.sort {
+            let location0 = CLLocation(latitude: ($0.latitude)!, longitude: ($0.longitude)!)
+            let location1 = CLLocation(latitude: ($1.latitude)!, longitude: ($1.longitude)!)
+            let distance0 = currentLocation?.distanceFromLocation(location0)
+            let distance1 = currentLocation?.distanceFromLocation(location1)
+            return distance0 < distance1
+        }
+        locals.removeAll()
+        locals = result
+        tableView.reloadData()
+    }
+}
+
+extension WLocalViewController: WSortSelectionTableViewControllerDelegate {
+    func selectedIndex(index: Int, tag: Int) {
+        if tag == 50 {
+            startLoadingView()
+            if index == 0 {
+                dispatch_async(dispatch_get_main_queue(),{
+                    self.eventHandler?.updateView()
+                })
+            } else {
+                let categoryId = categories[index - 1].id
+                dispatch_async(dispatch_get_main_queue(),{
+                    self.eventHandler?.findLocalsWithCategory(categoryId!)
+                })
+            }
+        } else {
+            if index == 0 {
+                sortByDistance()
+            } else {
+                sortAlpa()
+            }
+        }
     }
 }
 

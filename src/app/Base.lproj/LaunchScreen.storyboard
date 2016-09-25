@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PORTADA" translatesAutoresizingMaskIntoConstraints="NO" id="jSD-k1-c8C">
-                                <rect key="frame" x="-90" y="-90" width="780" height="780"/>
+                                <rect key="frame" x="-30" y="-30" width="660" height="660"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="white-logo" translatesAutoresizingMaskIntoConstraints="NO" id="25O-Nc-l7d">
                                 <rect key="frame" x="225" y="225" width="150" height="150"/>
@@ -32,11 +32,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="jSD-k1-c8C" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="4ng-ac-dNv"/>
-                            <constraint firstItem="jSD-k1-c8C" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="1.3" id="7cb-DE-zKQ"/>
+                            <constraint firstItem="jSD-k1-c8C" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="1.1" id="7cb-DE-zKQ"/>
                             <constraint firstItem="25O-Nc-l7d" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Ich-lV-sIo"/>
                             <constraint firstItem="25O-Nc-l7d" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="0.25" id="RMn-Ay-eNR"/>
                             <constraint firstItem="25O-Nc-l7d" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="ZgC-ky-Gq8"/>
-                            <constraint firstItem="jSD-k1-c8C" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="1.3" id="qW1-iA-MTe"/>
+                            <constraint firstItem="jSD-k1-c8C" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="1.1" id="qW1-iA-MTe"/>
                             <constraint firstItem="jSD-k1-c8C" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="ylS-Gb-lFJ"/>
                         </constraints>
                     </view>

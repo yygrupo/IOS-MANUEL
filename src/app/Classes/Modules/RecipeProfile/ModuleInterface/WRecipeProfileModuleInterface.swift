@@ -11,7 +11,7 @@ import Foundation
 protocol WRecipeProfileModuleInterface
 {
     func updateView()
-    func updateRate(recipe: WRecipe)
+    func updateRecipe(recipe: WRecipe)
     func showLocalProfile(local: WLocal, recipe: WRecipe)
 }
 

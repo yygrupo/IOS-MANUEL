@@ -20,6 +20,7 @@ class WRecipeCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var labelStartDistance: UILabel?
     @IBOutlet weak var labelTravelTime: UILabel?
     @IBOutlet weak var cosmosViewRaiting: CosmosView?
+    @IBOutlet weak var imageViewTasted: UIImageView!
     
     var recipe: WRecipe?
     
@@ -90,6 +91,8 @@ class WRecipeCollectionViewCell: UICollectionViewCell {
         if recipe.images?.count > 0 {
             imageViewRecipe?.image = UIImage(named: recipe.images![0])
         }
+        
+        imageViewTasted.hidden = !recipe.tasted!
         
         if WMainBoard.sharedInstance.currentLocation == nil {
             WMainBoard.sharedInstance.locationRequest?.start()

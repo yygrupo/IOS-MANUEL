@@ -16,4 +16,12 @@ class WRatePresenter: NSObject, WRateModuleInterface
 
     // MARK: - WRateModuleInterface methods
     // implement module interface here
+    
+    func codeDetected(code: String) {
+        if WMainBoard.sharedInstance.internetActive == false {
+            //
+        } else {
+            //
+        }
+    }
 }

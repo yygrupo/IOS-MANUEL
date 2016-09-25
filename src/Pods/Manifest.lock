@@ -1,6 +1,6 @@
 PODS:
+  - ActionSheetPicker-3.0 (2.2.0)
   - Alamofire (3.4.1)
-  - AZDropdownMenu (1.1.1)
   - BRYXBanner (0.5.2):
     - BRYXBanner/Core (= 0.5.2)
   - BRYXBanner/Core (0.5.2)
@@ -17,6 +17,7 @@ PODS:
   - MapleBacon (2.0.8)
   - MBProgressHUD (1.0.0)
   - QRCodeReader.swift (6.1.0)
+  - ReachabilitySwift (2.3.3)
   - SKPhotoBrowser (2.0.2)
   - SlideMenuControllerSwift (2.2.2)
   - SwiftLocation (1.0.0)
@@ -24,8 +25,8 @@ PODS:
   - SwiftyJSON (2.3.2)
 
 DEPENDENCIES:
+  - ActionSheetPicker-3.0
   - Alamofire
-  - AZDropdownMenu
   - BRYXBanner
   - Cosmos (~> 1.2)
   - Fakery
@@ -35,6 +36,7 @@ DEPENDENCIES:
   - MapleBacon
   - MBProgressHUD
   - QRCodeReader.swift
+  - ReachabilitySwift
   - SKPhotoBrowser
   - SlideMenuControllerSwift
   - SwiftLocation
@@ -42,8 +44,8 @@ DEPENDENCIES:
   - SwiftyJSON
 
 SPEC CHECKSUMS:
+  ActionSheetPicker-3.0: d11a4c12c6aaf704b8a3f56d179198c99f3e41e6
   Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
-  AZDropdownMenu: 0ba09d5f7b1b8dc795824ec281c4dde8515f4498
   BRYXBanner: 5f0911d52e0a77e088f7ea7ddcdebd02afb7828a
   Cosmos: efddd01b729956ad6335bc58bc92e5735a1d12a3
   Fakery: 8e6f7da2feb311a90a956ab9b9b2ce72106d1787
@@ -53,12 +55,13 @@ SPEC CHECKSUMS:
   MapleBacon: 32e3590e1730485b93f450283ff242f9444efc12
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   QRCodeReader.swift: 786d70dda6c7fed54019f715cbe1f588539f7c2d
+  ReachabilitySwift: e0f6b6f280effb47731acfaaa2d5ffe223703793
   SKPhotoBrowser: a23a4125deca7451d298248c7eafc8332fb909df
   SlideMenuControllerSwift: e257221100c39d49edccaaeb0238b55a0c67953a
   SwiftLocation: b01455c5ff67ac66b0696b70ca9d29bda646ec5a
   SwiftRandom: a03b68cbcda1b03d0fef5a1b87296f9500b6eac3
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
-PODFILE CHECKSUM: 3493203cdbe717864ad59f7b2cef53693c5a755b
+PODFILE CHECKSUM: 39f6ddf9fc205753b607f3b5ac3270c761f72e81
 
 COCOAPODS: 1.0.1

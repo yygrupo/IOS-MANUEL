@@ -19,6 +19,14 @@ class WHomeInteractor: NSObject
     var recipeStack = [WRecipe]()
     var recipesToShow = [WRecipe]()
     
+    func findRecipesWithCategory(categoryId: String) {
+        dataManager?.findRecipesWithCategory(categoryId, completion: { (recipes) in
+            self.recipeStack = recipes!
+            WMainBoard.sharedInstance.locals = [WLocal]()
+            self.findLocalFromRecipe()
+        })
+    }
+    
     func findRecipes() {
         dataManager?.findCategories({ (categories) in
             WMainBoard.sharedInstance.categories = categories!
@@ -75,12 +83,12 @@ class WHomeInteractor: NSObject
     }
     
     func generateCategories() -> [WCategory] {
-        let categoryI = WCategory(id: "1", name: "Todas", image: "logo-min")
-        let categoryII = WCategory(id: "2", name: "Tradicionáis", image: "tradicional")
-        let categoryIII = WCategory(id: "3", name: "Creativas", image: "creativa")
-        let categoryIV = WCategory(id: "4", name: "Cóctels", image: "coctel")
+//        let categoryI = WCategory(id: "0", name: "Todas", image: "logo-min")
+        let categoryII = WCategory(id: "1", name: "Tradicionáis".localized, image: "tradicional")
+        let categoryIII = WCategory(id: "2", name: "Creativas".localized, image: "creativa")
+        let categoryIV = WCategory(id: "3", name: "Cóctels".localized, image: "coctel")
         
-        let categories = [categoryI, categoryII, categoryIII, categoryIV]
+        let categories = [categoryII, categoryIII, categoryIV]
         
         return categories
     }
@@ -130,11 +138,11 @@ class WHomeInteractor: NSObject
             let raiting = 0
             let vegans = faker.number.randomBool()
             let vegetarians = faker.number.randomBool()
-            let suitableForVegans = faker.number.randomBool()
-            let category = faker.number.randomInt(min: 1, max: 4)
+            let celiacs = faker.number.randomBool()
+            let category = faker.number.randomInt(min: 1, max: 3)
             let images = imagesFromCategory(category)
             
-            let recipe = WRecipe(id: id, name: name, rating: raiting, images: images, details: details, vegans: vegans, vegetarians: vegetarians, suitableForVegans: suitableForVegans, category: String(category), local: nil)
+            let recipe = WRecipe(id: id, name: name, rating: raiting, images: images, details: details, vegans: vegans, vegetarians: vegetarians, celiacs: celiacs, category: String(category), local: nil, tasted: false, favorite: false)
             recipes.append(recipe)
         }
         
@@ -147,13 +155,13 @@ class WHomeInteractor: NSObject
         for _ in 0...imagesCount {
             switch category {
             case 1:
-                imagesPath.append(creativeImage())
+                imagesPath.append(traditionalImage())
                 break
             case 2:
                 imagesPath.append(creativeImage())
                 break
             case 3:
-                imagesPath.append(creativeImage())
+                imagesPath.append(coctelesImage())
                 break
             default:
                 imagesPath.append(allImage())

@@ -19,6 +19,9 @@ class WLocalTableViewCell: UITableViewCell {
     @IBOutlet weak var labelCreativeFood: UILabel?
     @IBOutlet weak var labelTraditionalFood: UILabel?
     
+    @IBOutlet weak var viewTraditionalContainer: UIView!
+    @IBOutlet weak var viewCreativeContainer: UIView!
+    
     var local: WLocal?
 
     override func awakeFromNib() {
@@ -84,9 +87,9 @@ class WLocalTableViewCell: UITableViewCell {
         var creative = ""
         
         for recipe in local.recipes! {
-            if recipe.category == "2" && traditional.isEmpty == true {
+            if recipe.category == "1" && traditional.isEmpty == true {
                 traditional = recipe.name!
-            } else if recipe.category == "3" && creative.isEmpty == true {
+            } else if recipe.category == "2" && creative.isEmpty == true {
                 creative = recipe.name!
             }
             
@@ -97,6 +100,16 @@ class WLocalTableViewCell: UITableViewCell {
         
         labelCreativeFood?.text = creative
         labelTraditionalFood?.text = traditional
+        
+        viewTraditionalContainer.hidden = false
+        viewCreativeContainer.hidden = false
+        if traditional.isEmpty == true {
+            viewTraditionalContainer.hidden = true
+        }
+        
+        if creative.isEmpty == true {
+            viewCreativeContainer.hidden = true
+        }
         
         if WMainBoard.sharedInstance.currentLocation == nil {
             WMainBoard.sharedInstance.locationRequest?.start()

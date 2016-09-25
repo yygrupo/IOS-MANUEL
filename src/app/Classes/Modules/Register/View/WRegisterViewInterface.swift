@@ -10,5 +10,5 @@ import Foundation
 
 protocol WRegisterViewInterface
 {
-
+    func stopLoadingView()
 }

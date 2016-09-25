@@ -10,7 +10,7 @@ import Foundation
 
 protocol WRateModuleInterface
 {
-
+    func codeDetected(code: String)
 }
 
 protocol WRateModuleDelegate

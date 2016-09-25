@@ -54,7 +54,7 @@ class WMapViewController: UIViewController, WMapViewInterface
         let menuBarButtonItem: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "Menu"), style: .Plain, target: self, action: #selector(WMapViewController.showMenuAction))
         self.navigationItem.leftBarButtonItem = menuBarButtonItem
         
-        mapView.delegate = self
+        self.mapView.delegate = self
         mapView.settings.compassButton = true
         mapView.settings.myLocationButton = true
         mapView.myLocationEnabled = true
@@ -117,5 +117,9 @@ extension WMapViewController : GMSMapViewDelegate {
     func mapView(mapView: GMSMapView, didTapInfoWindowOfMarker marker: GMSMarker) {
         let localWrapper = marker.userData as! WLocalWrapper
         eventHandler?.showLocalProfile(localWrapper.local!)
+    }
+    
+    func mapView(mapView: GMSMapView, didTapMarker marker: GMSMarker) -> Bool {
+        return true
     }
 }

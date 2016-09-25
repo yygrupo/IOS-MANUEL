@@ -24,6 +24,8 @@ class WRecipeProfileViewController: UIViewController, WRecipeProfileViewInterfac
     @IBOutlet weak var labelTitle: UILabel!
     @IBOutlet weak var cosmosViewRaiting: CosmosView?
     @IBOutlet weak var imageViewRecipe: UIImageView!
+    @IBOutlet weak var buttonFavorite: UIButton!
+    @IBOutlet weak var buttonTasted: UIButton!
     
     // *** Decription view
     @IBOutlet weak var viewDescriptionContainer: UIView!
@@ -143,6 +145,18 @@ class WRecipeProfileViewController: UIViewController, WRecipeProfileViewInterfac
     func updateViewWithRecipe(recipe: WRecipe) {
         self.recipe = recipe
         
+        if recipe.favorite == true {
+            buttonFavorite.setImage(UIImage(named: "Like-Fill"), forState: .Normal)
+        } else {
+            buttonFavorite.setImage(UIImage(named: "Like"), forState: .Normal)
+        }
+        
+        if recipe.tasted == true {
+            buttonTasted.setImage(UIImage(named: "Tasted Filled"), forState: .Normal)
+        } else {
+            buttonTasted.setImage(UIImage(named: "Tasted"), forState: .Normal)
+        }
+        
         labelTitle.text = recipe.name
         if recipe.images?.count > 0 {
             imageViewRecipe.image = UIImage(named: recipe.images![0])
@@ -192,6 +206,32 @@ class WRecipeProfileViewController: UIViewController, WRecipeProfileViewInterfac
     // MARK: - Button event handlers
 
     // ** handle UI events here
+    
+    @IBAction func favoriteAction(sender: UIButton) {
+        recipe?.favorite = !(recipe?.favorite)!
+        if recipe!.favorite == true {
+            buttonFavorite.setImage(UIImage(named: "Like-Fill"), forState: .Normal)
+        } else {
+            buttonFavorite.setImage(UIImage(named: "Like"), forState: .Normal)
+        }
+        startLoadingView()
+        dispatch_async(dispatch_get_main_queue(),{
+            self.eventHandler?.updateRecipe(self.recipe!)
+        })
+    }
+    
+    @IBAction func tastedAction(sender: UIButton) {
+        recipe?.tasted = !(recipe?.tasted)!
+        if recipe!.tasted == true {
+            buttonTasted.setImage(UIImage(named: "Tasted Filled"), forState: .Normal)
+        } else {
+            buttonTasted.setImage(UIImage(named: "Tasted"), forState: .Normal)
+        }
+        startLoadingView()
+        dispatch_async(dispatch_get_main_queue(),{
+            self.eventHandler?.updateRecipe(self.recipe!)
+        })
+    }
     
     @IBAction func exploreToggled(sender: UIButton) {
         
@@ -258,7 +298,7 @@ extension WRecipeProfileViewController: UITableViewDelegate, UITableViewDataSour
             break
         case 1:
             cell.imageViewInfo?.image = UIImage(named: "celiacos")
-            if recipe?.suitableForVegans == true {
+            if recipe?.celiacs == true {
                 cell.labelInfo?.text = "Apta para celiacos"
             } else {
                 cell.labelInfo?.text = "No apta para celiacos"
@@ -318,6 +358,8 @@ extension WRecipeProfileViewController: WRatingViewControllerDelegate {
         recipe?.rating = rating
         cosmosViewRaiting?.rating = rating.toDouble
         tableViewInfo.reloadData()
-        self.eventHandler?.updateRate(self.recipe!)
+        dispatch_async(dispatch_get_main_queue(),{
+            self.eventHandler?.updateRecipe(self.recipe!)
+        })
     }
 }

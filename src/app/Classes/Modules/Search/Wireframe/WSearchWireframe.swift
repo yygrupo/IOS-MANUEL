@@ -14,6 +14,7 @@ class WSearchWireframe: NSObject
     var rootWireframe: RootWireframe?
     var presenter: WSearchPresenter?
     var viewController: WSearchViewController?
+    var searchresultWireframe: WSearchResultWireframe?
 
     func presentSelfFromViewController(viewController: UIViewController)
     {
@@ -43,5 +44,9 @@ class WSearchWireframe: NSObject
         // present controller
         // *** present self with RootViewController
         rootWireframe?.setMainViewController(navigationController!)
+    }
+    
+    func presentSearchResultViewController() {
+        searchresultWireframe!.presentSelfFromViewController(self.viewController!)
     }
 }

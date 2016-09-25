@@ -14,7 +14,7 @@ class WRecipeProfilePresenter: NSObject, WRecipeProfileModuleInterface
     weak var wireframe: WRecipeProfileWireframe?
     var userInterface: WRecipeProfileViewInterface?
     
-    func ratingUpdated() {
+    func recipeUpdate() {
         userInterface?.stopLoadingView()
     }
 
@@ -26,8 +26,8 @@ class WRecipeProfilePresenter: NSObject, WRecipeProfileModuleInterface
         userInterface?.updateViewWithRecipe(recipe!)
     }
     
-    func updateRate(recipe: WRecipe) {
-        interactor?.updateRate(recipe)
+    func updateRecipe(recipe: WRecipe) {
+        interactor?.updateRecipe(recipe)
     }
     
     func showLocalProfile(local: WLocal, recipe: WRecipe) {

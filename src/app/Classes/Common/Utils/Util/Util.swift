@@ -32,12 +32,14 @@ class Utils: NSObject {
         let details = entity.details
         let vegans = entity.vegans?.boolValue
         let vegetarians = entity.vegetarians?.boolValue
-        let suitableForVegans = entity.suitableForVegans?.boolValue
+        let celiacs = entity.celiacs?.boolValue
         let category = entity.categoryid
         var local = WLocal()
         local.id = entity.localid
+        let tasted = entity.tasted?.boolValue
+        let favorite = entity.favorite?.boolValue
         
-        return WRecipe(id: id, name: name, rating: Int(rating!), images: images, details: details, vegans: vegans, vegetarians: vegetarians, suitableForVegans: suitableForVegans, category: category, local: local)
+        return WRecipe(id: id, name: name, rating: Int(rating!), images: images, details: details, vegans: vegans, vegetarians: vegetarians, celiacs: celiacs, category: category, local: local, tasted: tasted, favorite: favorite)
     }
     
     class func categoryFromManagedEntity(entity: NSManagedCategory) -> WCategory {

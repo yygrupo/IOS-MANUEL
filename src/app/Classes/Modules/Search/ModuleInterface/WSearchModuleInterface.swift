@@ -10,7 +10,8 @@ import Foundation
 
 protocol WSearchModuleInterface
 {
-
+    func updateView()
+    func doSearchWithCriteria(searchCriteria: WSearchCriteria)
 }
 
 protocol WSearchModuleDelegate

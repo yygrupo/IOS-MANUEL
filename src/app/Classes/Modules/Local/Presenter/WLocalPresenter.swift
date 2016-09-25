@@ -17,6 +17,10 @@ class WLocalPresenter: NSObject, WLocalModuleInterface
     func updateViewWithLocal(locals: [WLocal]) {
         userInterface?.updateViewWithLocal(locals)
     }
+    
+    func updateViewWithCategories(categories: [WCategory]) {
+        userInterface?.updateViewWithCategories(categories)
+    }
 
     // MARK: - WLocalModuleInterface methods
     // implement module interface here
@@ -33,5 +37,9 @@ class WLocalPresenter: NSObject, WLocalModuleInterface
     
     func showMap() {
         wireframe?.presentMapViewController()
+    }
+    
+    func findLocalsWithCategory(category: String) {
+        interactor?.findLocalsWithCategory(category)
     }
 }

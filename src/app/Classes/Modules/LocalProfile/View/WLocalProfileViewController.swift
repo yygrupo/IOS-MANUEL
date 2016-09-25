@@ -71,6 +71,13 @@ class WLocalProfileViewController: UIViewController, WLocalProfileViewInterface
         })
     }
     
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        self.navigationController!.navigationBar.setBackgroundImage(navigationBarBackgroundImage, forBarMetrics: UIBarMetrics.Default)
+        self.navigationController!.navigationBar.shadowImage = navigationBarShadowImage
+    }
+    
     // MARK: - Private
     private func setupView() {
         viewInfoContainer.setupViewForApp()

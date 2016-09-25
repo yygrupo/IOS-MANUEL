@@ -10,7 +10,9 @@ import Foundation
 
 protocol WProfileModuleInterface
 {
-
+    func updateView()
+    func updateUser(user: WUser)
+    func logOut()
 }
 
 protocol WProfileModuleDelegate

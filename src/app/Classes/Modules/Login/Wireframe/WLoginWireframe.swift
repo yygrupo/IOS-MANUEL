@@ -14,6 +14,8 @@ class WLoginWireframe: NSObject
     var rootWireframe: RootWireframe?
     var presenter: WLoginPresenter?
     var viewController: WLoginViewController?
+    var profileWireframe: WProfileWireframe?
+    var registerWireframe: WRegisterWireframe?
 
     func presentSelfFromViewController(viewController: UIViewController)
     {
@@ -43,5 +45,13 @@ class WLoginWireframe: NSObject
         // present controller
         // *** present self with RootViewController
         rootWireframe?.setMainViewController(navigationController!)
+    }
+    
+    func presentUserProfileViewController() {
+        profileWireframe?.presentSelfFromViewController(self.viewController!)
+    }
+    
+    func presentRegisterViewController() {
+        registerWireframe?.presentSelfFromViewController(self.viewController!)
     }
 }

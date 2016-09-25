@@ -17,9 +17,11 @@ struct WRecipe: Equatable {
     var details: String?
     var vegans: Bool?
     var vegetarians: Bool?
-    var suitableForVegans: Bool?
+    var celiacs: Bool?
     var category: String?
     var local: WLocal?
+    var tasted: Bool?
+    var favorite: Bool?
 }
 func ==(first: WRecipe, second: WRecipe) -> Bool {
     return first.id == second.id
@@ -47,12 +49,34 @@ struct WCategory: Equatable {
     var name : String?
     var image : String?
 }
-
 func ==(first: WCategory, second: WCategory) -> Bool {
     return first.id == second.id
 }
 
+struct WSearchCriteria {
+    var name: String?
+    var radio: Float?
+    var category: WCategory?
+    var celiacs: Bool?
+    var vegetarian: Bool?
+    var vegan: Bool?
+}
+
 class WLocalWrapper: NSObject {
     var local: WLocal?
+}
+
+struct WMenuItem {
+    var name: String
+    var image: UIImage
+}
+
+struct WUser {
+    var userName: String?
+    var fullName: String?
+    var email: String?
+    var phoneNumber: String?
+    var image: UIImage?
+    var password: String?
 }
 

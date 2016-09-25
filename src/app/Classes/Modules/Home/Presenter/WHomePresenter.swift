@@ -33,4 +33,8 @@ class WHomePresenter: NSObject, WHomeModuleInterface
         WMainBoard.sharedInstance.recipeProfile = recipe
         wireframe?.presentRecipeProfileView()
     }
+    
+    func findRecipesWithCategory(categoryId: String) {
+        interactor?.findRecipesWithCategory(categoryId)
+    }
 }

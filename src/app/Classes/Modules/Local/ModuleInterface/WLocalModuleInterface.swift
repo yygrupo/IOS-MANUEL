@@ -13,6 +13,7 @@ protocol WLocalModuleInterface
     func updateView()
     func presentLocalDetail(local: WLocal)
     func showMap()
+    func findLocalsWithCategory(category: String)
 }
 
 protocol WLocalModuleDelegate

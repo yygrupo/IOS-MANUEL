@@ -12,6 +12,24 @@ class WHomeDataManager: NSObject
 {
     var dataStore: WCoreDataStore?
     
+    func findRecipesWithCategory(categoryId: String, completion:((recipes: [WRecipe]?) -> Void)?) {
+        let predicate = NSPredicate(format: "categoryid = %@", categoryId)
+        dataStore?.fetchEntriesForEntityName("Recipe", predicate: predicate, sortDescriptors: [], completion: { (results) in
+            var recipes = [WRecipe]()
+            for entityObject in results {
+                let managedObject = entityObject as? NSManagedRecipe
+                if managedObject == nil {
+                    continue
+                }
+                let recipe = Utils.recipeFromManagedEntity(entityObject as! NSManagedRecipe)
+                recipes.append(recipe)
+            }
+            if completion != nil {
+                completion!(recipes: recipes)
+            }
+        })
+    }
+    
     func findLocalFromRecipe(recipe: WRecipe, completion: ((local: WLocal?) -> Void)?) {
         var recipeLocal = WLocal()
         
@@ -100,7 +118,9 @@ class WHomeDataManager: NSObject
                 managedRecipe?.name = recipe.name
                 managedRecipe?.vegans = NSNumber(bool: recipe.vegans!)
                 managedRecipe?.vegetarians = NSNumber(bool: recipe.vegetarians!)
-                managedRecipe?.suitableForVegans = NSNumber(bool: recipe.suitableForVegans!)
+                managedRecipe?.celiacs = NSNumber(bool: recipe.celiacs!)
+                managedRecipe?.favorite = NSNumber(bool: false)
+                managedRecipe?.tasted = NSNumber(bool: false)
                 managedRecipe?.rating = NSNumber(integer: recipe.rating!)
             }
         }

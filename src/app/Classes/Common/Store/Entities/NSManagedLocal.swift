@@ -2,7 +2,7 @@
 //  NSManagedLocal.swift
 //  app
 //
-//  Created by male on 9/24/16.
+//  Created by male on 9/25/16.
 //  Copyright © 2016 Manuel Alejandro. All rights reserved.
 //
 

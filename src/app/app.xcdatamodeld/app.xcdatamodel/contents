@@ -19,19 +19,21 @@
     </entity>
     <entity name="Recipe" representedClassName="NSManagedRecipe" syncable="YES">
         <attribute name="categoryid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="celiacs" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <attribute name="details" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="favorite" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <attribute name="images" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="localid" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="rating" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="recipeid" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="suitableForVegans" optional="YES" attributeType="Boolean" syncable="YES"/>
-        <attribute name="vegans" optional="YES" attributeType="Boolean" syncable="YES"/>
-        <attribute name="vegetarians" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="tasted" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="vegans" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="vegetarians" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
     </entity>
     <elements>
         <element name="Category" positionX="-36" positionY="72" width="128" height="90"/>
         <element name="Local" positionX="-54" positionY="54" width="128" height="195"/>
-        <element name="Recipe" positionX="-63" positionY="-18" width="128" height="195"/>
+        <element name="Recipe" positionX="-63" positionY="-18" width="128" height="225"/>
     </elements>
 </model>

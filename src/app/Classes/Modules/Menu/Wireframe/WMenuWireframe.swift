@@ -24,6 +24,10 @@ class WMenuWireframe: NSObject
     var profileWireframe: WProfileWireframe?
     var mapWireframe: WMapWireframe?
     var reciperatedWireframe: WRecipeRatedWireframe?
+    var termsWireframe: WTermsWireframe?
+    var aboutWireframe: WAboutWireframe?
+    var newsWireframe: WNewsWireframe?
+    var tasteWireframe: WTasteWireframe?
 
     func presentSelfFromViewController(viewController: UIViewController)
     {
@@ -97,5 +101,21 @@ class WMenuWireframe: NSObject
     
     func presentRecipesRateViewController() {
         reciperatedWireframe?.presentSelfViewController()
+    }
+    
+    func presentNewsViewController() {
+        newsWireframe?.presentSelfViewController()
+    }
+    
+    func presentTermsViewController() {
+        termsWireframe?.presentSelfViewController()
+    }
+    
+    func presentAboutViewController() {
+        aboutWireframe?.presentSelfViewController()
+    }
+    
+    func presentTasteViewController() {
+        tasteWireframe?.presentSelfViewController()
     }
 }

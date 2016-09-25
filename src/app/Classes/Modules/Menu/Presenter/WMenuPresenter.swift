@@ -32,7 +32,7 @@ class WMenuPresenter: NSObject, WMenuModuleInterface
             wireframe?.presentRecipesRateViewController()
             break
         case 4:
-            // Same that home
+            wireframe?.presentTasteViewController()
             break
         case 5:
             wireframe?.presentMapViewController()
@@ -41,15 +41,21 @@ class WMenuPresenter: NSObject, WMenuModuleInterface
             wireframe?.presentSearchViewController()
             break
         case 7:
-            wireframe?.presentLoginViewController()
+            let userDefaults = NSUserDefaults.standardUserDefaults()
+            if userDefaults.stringForKey("lastUser") != nil {
+                wireframe?.presentProfileViewController()
+            } else {
+                wireframe?.presentLoginViewController()
+            }
             break
         case 8:
+            wireframe?.presentNewsViewController()
             break
         case 9:
-            break
-        case 10:
+            wireframe?.presentAboutViewController()
             break
         default:
+            wireframe?.presentTermsViewController()
             break
         }
     }

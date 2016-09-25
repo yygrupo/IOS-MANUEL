@@ -10,14 +10,12 @@ import UIKit
 import BRYXBanner
 import FlatUIColors
 import MBProgressHUD
-import AZDropdownMenu
+import CoreLocation
 
 class WHomeViewController: UIViewController, WHomeViewInterface, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIPopoverPresentationControllerDelegate, UISearchControllerDelegate, UISearchResultsUpdating
 {
     @IBOutlet weak var viewSearchBarContainer: UIView?
     @IBOutlet weak var collectionView: UICollectionView?
-    var filterMenu: AZDropdownMenu?
-    var sortMenu: AZDropdownMenu?
     
     // MARK: - Attributes
     var searchController: UISearchController?
@@ -85,7 +83,7 @@ class WHomeViewController: UIViewController, WHomeViewInterface, UICollectionVie
             searchController.dimsBackgroundDuringPresentation = false
             searchController.searchBar.tintColor            = UIColor.whiteColor()
             searchController.searchBar.barTintColor         = AppColors.blueLight
-            searchController.searchBar.placeholder         = "Escriba la frase..."
+            searchController.searchBar.placeholder         = "Escriba la frase...".localized
             
             //setup the search bar
             searchController.searchBar.autoresizingMask = [UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleHeight]
@@ -216,25 +214,14 @@ class WHomeViewController: UIViewController, WHomeViewInterface, UICollectionVie
     }
     
     func updateViewWithRecipes(recipes: [WRecipe]) {
-        stopLoadingView()
+        self.recipes.removeAll()
         self.recipes = recipes
-        collectionView?.reloadData()
+        sortByDistance()
+        stopLoadingView()
     }
     
     func updateViewWithCategories(categories: [WCategory]) {
         self.categories = categories
-        
-        var categorieNames: [String] = []
-        for category in categories {
-            categorieNames.append(category.name!)
-        }
-        
-        let leftTitles = categorieNames
-        filterMenu = AZDropdownMenu(titles: leftTitles)
-        filterMenu!.itemFontSize = 16.0
-//        filterMenu!.cellTapHandler = { [weak self] (indexPath: NSIndexPath) -> Void in
-//            
-//        }
     }
     
     // MARK: - Button event handlers
@@ -246,15 +233,104 @@ class WHomeViewController: UIViewController, WHomeViewInterface, UICollectionVie
     }
     
     func filtersAction(sender: UIBarButtonItem) {
-        if self.filterMenu?.isDescendantOfView(self.view) == true {
-            self.filterMenu?.hideMenu()
-        } else {
-            self.filterMenu?.showMenuFromView(self.view)
+        let sender_view = sender.valueForKey("view") as! UIView
+        
+        var menuItems = [WMenuItem(name: "Todas".localized, image: UIImage(named: "logo-min")!)]
+        for category in categories {
+            menuItems.append(WMenuItem(name: category.name!, image: UIImage(named: category.image!)!))
         }
-
+        
+        let menu = WSortSelectionTableViewController(style: .Plain, menuItems: menuItems)
+        menu.view.tag = 50
+        menu.delegate = self
+        
+        menu.modalPresentationStyle = .Popover
+        menu.preferredContentSize = CGSizeMake(200, 140)
+        
+        let popoverMenuViewController = menu.popoverPresentationController
+        popoverMenuViewController?.permittedArrowDirections = UIPopoverArrowDirection(rawValue: 0)
+        popoverMenuViewController?.delegate = self
+        popoverMenuViewController?.sourceView = self.navigationController?.navigationBar
+        popoverMenuViewController?.sourceRect = CGRect(
+            x: sender_view.center.x + 20,
+            y: sender_view.center.y + 100,
+            width: 1,
+            height: 1)
+        presentViewController(
+            menu,
+            animated: true,
+            completion: nil)
     }
     
     func sortAction(sender: UIBarButtonItem) {
+        let sender_view = sender.valueForKey("view") as! UIView
         
+        let menuItems = [WMenuItem(name: "Proximidade".localized, image: UIImage(named: "Marker Fill Gray")!), WMenuItem(name: "Alfabéticamente".localized, image: UIImage(named: "Alphabetical Sorting")!)]
+        
+        let menu = WSortSelectionTableViewController(style: .Plain, menuItems: menuItems)
+        menu.view.tag = 100
+        menu.delegate = self
+        
+        menu.modalPresentationStyle = .Popover
+        menu.preferredContentSize = CGSizeMake(200, 70)
+        
+        let popoverMenuViewController = menu.popoverPresentationController
+        popoverMenuViewController?.permittedArrowDirections = UIPopoverArrowDirection(rawValue: 0)
+        popoverMenuViewController?.delegate = self
+        popoverMenuViewController?.sourceView = self.navigationController?.navigationBar
+        popoverMenuViewController?.sourceRect = CGRect(
+            x: sender_view.center.x + 20,
+            y: sender_view.center.y + 65,
+            width: 1,
+            height: 1)
+        presentViewController(
+            menu,
+            animated: true,
+            completion: nil)
+    }
+    
+    func sortAlpa() {
+        let result = recipes.sort { $0.name < $1.name }
+        recipes.removeAll()
+        recipes = result
+        collectionView?.reloadData()
+    }
+    
+    func sortByDistance() {
+        let currentLocation = WMainBoard.sharedInstance.currentLocation
+        let result = recipes.sort {
+            let location0 = CLLocation(latitude: ($0.local?.latitude)!, longitude: ($0.local?.longitude)!)
+            let location1 = CLLocation(latitude: ($1.local?.latitude)!, longitude: ($1.local?.longitude)!)
+            let distance0 = currentLocation?.distanceFromLocation(location0)
+            let distance1 = currentLocation?.distanceFromLocation(location1)
+            return distance0 < distance1
+        }
+        recipes.removeAll()
+        recipes = result
+        collectionView?.reloadData()
+    }
+}
+
+extension WHomeViewController: WSortSelectionTableViewControllerDelegate {
+    func selectedIndex(index: Int, tag: Int) {
+        if tag == 50 {
+            startLoadingView()
+            if index == 0 {
+                dispatch_async(dispatch_get_main_queue(),{
+                    self.eventHandler?.updateView()
+                })
+            } else {
+                let categoryId = categories[index - 1].id
+                dispatch_async(dispatch_get_main_queue(),{
+                    self.eventHandler?.findRecipesWithCategory(categoryId!)
+                })
+            }
+        } else {
+            if index == 0 {
+                sortByDistance()
+            } else {
+                sortAlpa()
+            }
+        }
     }
 }

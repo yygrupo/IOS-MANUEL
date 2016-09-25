@@ -13,7 +13,6 @@ class RootWireframe: NSObject
 {
     var window: UIWindow?
     var menuWireframe: WMenuWireframe?
-    var homeWireframe: WHomeWireframe?
     var slideMenuController: WSlideMenuViewController?
     
     init(window: UIWindow)
@@ -26,6 +25,12 @@ class RootWireframe: NSObject
     func storyBoard() -> UIStoryboard {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         return storyboard
+    }
+    
+    func showStartViewController(viewController: UIViewController) {
+        self.window?.backgroundColor = UIColor(hexString: "#1A4682")
+        self.window?.rootViewController = viewController
+        self.window?.makeKeyAndVisible()
     }
     
     func showRootViewController(viewController: UIViewController) {

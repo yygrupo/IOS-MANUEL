@@ -10,7 +10,7 @@ import Foundation
 
 protocol WRegisterModuleInterface
 {
-
+    func registerUser(user: WUser)
 }
 
 protocol WRegisterModuleDelegate

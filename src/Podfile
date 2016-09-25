@@ -31,9 +31,6 @@ target 'app' do
   # Image donwload
   pod 'MapleBacon'
   
-  # Drop down menu
-  pod 'AZDropdownMenu'
-  
   # GoogleMaps
   pod 'GoogleMaps'
   
@@ -52,6 +49,11 @@ target 'app' do
   
   # QRCode reader
   pod 'QRCodeReader.swift'
+  
+  # PickerView
+  pod 'ActionSheetPicker-3.0'
+  
+  pod 'ReachabilitySwift'
 
   target 'appTests' do
     inherit! :search_paths

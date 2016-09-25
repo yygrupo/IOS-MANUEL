@@ -10,5 +10,6 @@ import Foundation
 
 protocol WSearchViewInterface
 {
-
+    func updateViewWithCategories(categories: [WCategory])
+    func stopLoadingView()
 }

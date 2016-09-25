@@ -12,6 +12,7 @@ protocol WHomeModuleInterface
 {
     func updateView()
     func presentRecipeDetail(recipe: WRecipe)
+    func findRecipesWithCategory(categoryId: String)
 }
 
 protocol WHomeModuleDelegate
