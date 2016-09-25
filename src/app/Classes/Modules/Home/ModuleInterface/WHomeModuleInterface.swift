@@ -11,6 +11,7 @@ import Foundation
 protocol WHomeModuleInterface
 {
     func updateView()
+    func presentRecipeDetail(recipe: WRecipe)
 }
 
 protocol WHomeModuleDelegate

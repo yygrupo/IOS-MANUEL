@@ -28,4 +28,9 @@ class WHomePresenter: NSObject, WHomeModuleInterface
     func updateView() {
         interactor?.findRecipes()
     }
+    
+    func presentRecipeDetail(recipe: WRecipe) {
+        WMainBoard.sharedInstance.recipeProfile = recipe
+        wireframe?.presentRecipeProfileView()
+    }
 }

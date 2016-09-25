@@ -46,6 +46,12 @@ target 'app' do
   
   # Location
   pod 'SwiftLocation'
+  
+  # Gallery Viewer
+  pod 'SKPhotoBrowser'
+  
+  # QRCode reader
+  pod 'QRCodeReader.swift'
 
   target 'appTests' do
     inherit! :search_paths

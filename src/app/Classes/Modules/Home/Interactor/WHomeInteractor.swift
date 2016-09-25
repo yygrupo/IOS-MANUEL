@@ -16,26 +16,48 @@ class WHomeInteractor: NSObject
 {
     weak var presenter: WHomePresenter?
     var dataManager: WHomeDataManager?
+    var recipeStack = [WRecipe]()
+    var recipesToShow = [WRecipe]()
     
     func findRecipes() {
         dataManager?.findCategories({ (categories) in
+            WMainBoard.sharedInstance.categories = categories!
             self.presenter?.updateViewWithCategories(categories!)
         })
-//        dataManager?.findRecipes({ (recipes) in
-//            if recipes?.count == 0 {
+        recipeStack.removeAll()
+        recipesToShow.removeAll()
+        dataManager?.findRecipes({ (recipes) in
+            if recipes?.count == 0 {
                 self.generateDummyData()
-//            } else {
-//                self.presenter?.updateViewWithRecipes(recipes!)
-//            }
-//        })
+            } else {
+                self.recipeStack = recipes!
+                WMainBoard.sharedInstance.locals = [WLocal]()
+                self.findLocalFromRecipe()
+            }
+        })
+    }
+    
+    func findLocalFromRecipe() {
+        if recipeStack.count == 0 {
+            self.presenter?.updateViewWithRecipes(recipesToShow)
+            return
+        }
+        
+        var recipe = recipeStack.removeFirst()
+        dataManager?.findLocalFromRecipe(recipe, completion: { (local) in
+            recipe.local = local
+            self.recipesToShow.append(recipe)
+            WMainBoard.sharedInstance.locals.append(local!)
+            self.findLocalFromRecipe()
+        })
     }
     
     func generateDummyData() {
         let locals = generateLocals()
         let categories = generateCategories()
         
-        WMainBoard.sharedInstance.locals = generateLocals()
-        WMainBoard.sharedInstance.categories = generateCategories()
+        WMainBoard.sharedInstance.locals = locals
+        WMainBoard.sharedInstance.categories = categories
         
         var recipes = [WRecipe]()
         
@@ -44,9 +66,9 @@ class WHomeInteractor: NSObject
                 recipes.append(recipe)
             }
         }
-        dataManager?.saveCategories(categories, completion: { 
+        dataManager?.saveCategories(categories, completion: {
+            self.presenter?.updateViewWithCategories(categories)
             self.dataManager?.saveLocals(locals, completion: {
-                self.presenter?.updateViewWithCategories(categories)
                 self.presenter?.updateViewWithRecipes(recipes)
             })
         })
@@ -59,7 +81,6 @@ class WHomeInteractor: NSObject
         let categoryIV = WCategory(id: "4", name: "Cóctels", image: "coctel")
         
         let categories = [categoryI, categoryII, categoryIII, categoryIV]
-        dataManager?.saveCategories(categories, completion: nil)
         
         return categories
     }
@@ -110,10 +131,10 @@ class WHomeInteractor: NSObject
             let vegans = faker.number.randomBool()
             let vegetarians = faker.number.randomBool()
             let suitableForVegans = faker.number.randomBool()
-            let category = faker.number.randomInt(min: 0, max: 3)
+            let category = faker.number.randomInt(min: 1, max: 4)
             let images = imagesFromCategory(category)
             
-            let recipe = WRecipe(id: id, name: name, raiting: raiting, images: images, details: details, vegans: vegans, vegetarians: vegetarians, suitableForVegans: suitableForVegans, category: String(category), local: nil)
+            let recipe = WRecipe(id: id, name: name, rating: raiting, images: images, details: details, vegans: vegans, vegetarians: vegetarians, suitableForVegans: suitableForVegans, category: String(category), local: nil)
             recipes.append(recipe)
         }
         
@@ -125,13 +146,13 @@ class WHomeInteractor: NSObject
         let imagesCount = Int.random(3, 5)
         for _ in 0...imagesCount {
             switch category {
-            case 0:
-                imagesPath.append(creativeImage())
-                break
             case 1:
                 imagesPath.append(creativeImage())
                 break
             case 2:
+                imagesPath.append(creativeImage())
+                break
+            case 3:
                 imagesPath.append(creativeImage())
                 break
             default:

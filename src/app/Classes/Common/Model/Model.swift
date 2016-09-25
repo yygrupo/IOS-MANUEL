@@ -9,10 +9,10 @@
 import Foundation
 import UIKit
 
-struct WRecipe {
+struct WRecipe: Equatable {
     var id: String?
     var name: String?
-    var raiting: Int?
+    var rating: Int?
     var images: [String]?
     var details: String?
     var vegans: Bool?
@@ -21,8 +21,11 @@ struct WRecipe {
     var category: String?
     var local: WLocal?
 }
+func ==(first: WRecipe, second: WRecipe) -> Bool {
+    return first.id == second.id
+}
 
-struct WLocal {
+struct WLocal: Equatable {
     var id: String?
     var name: String?
     var address: String?
@@ -35,6 +38,9 @@ struct WLocal {
     var latitude: Double?
     var longitude: Double?
 }
+func ==(first: WLocal, second: WLocal) -> Bool {
+    return first.id == second.id
+}
 
 struct WCategory: Equatable {
     var id : String?
@@ -43,6 +49,10 @@ struct WCategory: Equatable {
 }
 
 func ==(first: WCategory, second: WCategory) -> Bool {
-    return first.name == second.name
+    return first.id == second.id
+}
+
+class WLocalWrapper: NSObject {
+    var local: WLocal?
 }
 

@@ -18,7 +18,7 @@ class WLocalProfileWireframe: NSObject
     func presentSelfFromViewController(viewController: UIViewController)
     {
         // save reference
-        self.viewController = WLocalProfileViewController(nibName: "WLocalProfileViewController", bundle: nil)
+        self.viewController = self.rootWireframe!.storyBoard().instantiateViewControllerWithIdentifier("WLocalProfileViewController") as? WLocalProfileViewController
 
         // view <-> presenter
         self.presenter?.userInterface = self.viewController
@@ -26,5 +26,6 @@ class WLocalProfileWireframe: NSObject
 
         // present controller
         // *** present self with RootViewController
+        viewController.navigationController?.pushViewController(self.viewController!, animated: true)
     }
 }

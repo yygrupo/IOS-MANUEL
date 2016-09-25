@@ -8,24 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		378EB4A6667CD8CDDA4A2E15 /* Pods_appTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C18CA9AE026506F49D051ACF /* Pods_appTests.framework */; };
-		7107EB1D1D95E9BC00FBFFC7 /* NSManagedLocal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7107EB171D95E9BC00FBFFC7 /* NSManagedLocal+CoreDataProperties.swift */; };
-		7107EB1E1D95E9BC00FBFFC7 /* NSManagedLocal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7107EB171D95E9BC00FBFFC7 /* NSManagedLocal+CoreDataProperties.swift */; };
-		7107EB1F1D95E9BC00FBFFC7 /* NSManagedLocal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7107EB171D95E9BC00FBFFC7 /* NSManagedLocal+CoreDataProperties.swift */; };
-		7107EB201D95E9BC00FBFFC7 /* NSManagedLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7107EB181D95E9BC00FBFFC7 /* NSManagedLocal.swift */; };
-		7107EB211D95E9BC00FBFFC7 /* NSManagedLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7107EB181D95E9BC00FBFFC7 /* NSManagedLocal.swift */; };
-		7107EB221D95E9BC00FBFFC7 /* NSManagedLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7107EB181D95E9BC00FBFFC7 /* NSManagedLocal.swift */; };
-		7107EB231D95E9BC00FBFFC7 /* NSManagedRecipe+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7107EB191D95E9BC00FBFFC7 /* NSManagedRecipe+CoreDataProperties.swift */; };
-		7107EB241D95E9BC00FBFFC7 /* NSManagedRecipe+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7107EB191D95E9BC00FBFFC7 /* NSManagedRecipe+CoreDataProperties.swift */; };
-		7107EB251D95E9BC00FBFFC7 /* NSManagedRecipe+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7107EB191D95E9BC00FBFFC7 /* NSManagedRecipe+CoreDataProperties.swift */; };
-		7107EB261D95E9BC00FBFFC7 /* NSManagedRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7107EB1A1D95E9BC00FBFFC7 /* NSManagedRecipe.swift */; };
-		7107EB271D95E9BC00FBFFC7 /* NSManagedRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7107EB1A1D95E9BC00FBFFC7 /* NSManagedRecipe.swift */; };
-		7107EB281D95E9BC00FBFFC7 /* NSManagedRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7107EB1A1D95E9BC00FBFFC7 /* NSManagedRecipe.swift */; };
-		7107EB291D95E9BC00FBFFC7 /* NSManagedCategory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7107EB1B1D95E9BC00FBFFC7 /* NSManagedCategory+CoreDataProperties.swift */; };
-		7107EB2A1D95E9BC00FBFFC7 /* NSManagedCategory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7107EB1B1D95E9BC00FBFFC7 /* NSManagedCategory+CoreDataProperties.swift */; };
-		7107EB2B1D95E9BC00FBFFC7 /* NSManagedCategory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7107EB1B1D95E9BC00FBFFC7 /* NSManagedCategory+CoreDataProperties.swift */; };
-		7107EB2C1D95E9BC00FBFFC7 /* NSManagedCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7107EB1C1D95E9BC00FBFFC7 /* NSManagedCategory.swift */; };
-		7107EB2D1D95E9BC00FBFFC7 /* NSManagedCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7107EB1C1D95E9BC00FBFFC7 /* NSManagedCategory.swift */; };
-		7107EB2E1D95E9BC00FBFFC7 /* NSManagedCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7107EB1C1D95E9BC00FBFFC7 /* NSManagedCategory.swift */; };
 		7107EB301D95EC1100FBFFC7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7107EB2F1D95EC1100FBFFC7 /* CoreLocation.framework */; };
 		7107EB331D95EE0B00FBFFC7 /* WMainBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7107EB321D95EE0B00FBFFC7 /* WMainBoard.swift */; };
 		7107EB341D95EE0B00FBFFC7 /* WMainBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7107EB321D95EE0B00FBFFC7 /* WMainBoard.swift */; };
@@ -33,6 +15,12 @@
 		7107EB381D95FBEF00FBFFC7 /* WLocalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7107EB371D95FBEF00FBFFC7 /* WLocalTableViewCell.swift */; };
 		7107EB391D95FBEF00FBFFC7 /* WLocalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7107EB371D95FBEF00FBFFC7 /* WLocalTableViewCell.swift */; };
 		7107EB3A1D95FBEF00FBFFC7 /* WLocalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7107EB371D95FBEF00FBFFC7 /* WLocalTableViewCell.swift */; };
+		712AA6721D970FFD00F3B3DA /* WRecipeProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712AA6711D970FFD00F3B3DA /* WRecipeProfileTableViewCell.swift */; };
+		712AA6731D970FFD00F3B3DA /* WRecipeProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712AA6711D970FFD00F3B3DA /* WRecipeProfileTableViewCell.swift */; };
+		712AA6741D970FFD00F3B3DA /* WRecipeProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712AA6711D970FFD00F3B3DA /* WRecipeProfileTableViewCell.swift */; };
+		712AA6771D9720D300F3B3DA /* WRatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712AA6761D9720D300F3B3DA /* WRatingViewController.swift */; };
+		712AA6781D9720D300F3B3DA /* WRatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712AA6761D9720D300F3B3DA /* WRatingViewController.swift */; };
+		712AA6791D9720D300F3B3DA /* WRatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712AA6761D9720D300F3B3DA /* WRatingViewController.swift */; };
 		714098381D90DC2800B43B11 /* WLocalProfileDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7140981E1D90DC2800B43B11 /* WLocalProfileDataManager.swift */; };
 		714098391D90DC2800B43B11 /* WLocalProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714098201D90DC2800B43B11 /* WLocalProfileInteractor.swift */; };
 		7140983A1D90DC2800B43B11 /* WLocalProfileModuleInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714098221D90DC2800B43B11 /* WLocalProfileModuleInterface.swift */; };
@@ -155,6 +143,27 @@
 		71573C9E1D94B0CD0049E3E0 /* l8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 71573C881D94B0CD0049E3E0 /* l8.jpg */; };
 		71573C9F1D94B0CD0049E3E0 /* l8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 71573C881D94B0CD0049E3E0 /* l8.jpg */; };
 		71573CA01D94B0CD0049E3E0 /* l8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 71573C881D94B0CD0049E3E0 /* l8.jpg */; };
+		715AC9B41D972F7400A738C4 /* NSManagedCategory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715AC9AE1D972F7400A738C4 /* NSManagedCategory+CoreDataProperties.swift */; };
+		715AC9B51D972F7400A738C4 /* NSManagedCategory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715AC9AE1D972F7400A738C4 /* NSManagedCategory+CoreDataProperties.swift */; };
+		715AC9B61D972F7400A738C4 /* NSManagedCategory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715AC9AE1D972F7400A738C4 /* NSManagedCategory+CoreDataProperties.swift */; };
+		715AC9B71D972F7400A738C4 /* NSManagedCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715AC9AF1D972F7400A738C4 /* NSManagedCategory.swift */; };
+		715AC9B81D972F7400A738C4 /* NSManagedCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715AC9AF1D972F7400A738C4 /* NSManagedCategory.swift */; };
+		715AC9B91D972F7400A738C4 /* NSManagedCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715AC9AF1D972F7400A738C4 /* NSManagedCategory.swift */; };
+		715AC9BA1D972F7400A738C4 /* NSManagedRecipe+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715AC9B01D972F7400A738C4 /* NSManagedRecipe+CoreDataProperties.swift */; };
+		715AC9BB1D972F7400A738C4 /* NSManagedRecipe+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715AC9B01D972F7400A738C4 /* NSManagedRecipe+CoreDataProperties.swift */; };
+		715AC9BC1D972F7400A738C4 /* NSManagedRecipe+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715AC9B01D972F7400A738C4 /* NSManagedRecipe+CoreDataProperties.swift */; };
+		715AC9BD1D972F7400A738C4 /* NSManagedRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715AC9B11D972F7400A738C4 /* NSManagedRecipe.swift */; };
+		715AC9BE1D972F7400A738C4 /* NSManagedRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715AC9B11D972F7400A738C4 /* NSManagedRecipe.swift */; };
+		715AC9BF1D972F7400A738C4 /* NSManagedRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715AC9B11D972F7400A738C4 /* NSManagedRecipe.swift */; };
+		715AC9C01D972F7400A738C4 /* NSManagedLocal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715AC9B21D972F7400A738C4 /* NSManagedLocal+CoreDataProperties.swift */; };
+		715AC9C11D972F7400A738C4 /* NSManagedLocal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715AC9B21D972F7400A738C4 /* NSManagedLocal+CoreDataProperties.swift */; };
+		715AC9C21D972F7400A738C4 /* NSManagedLocal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715AC9B21D972F7400A738C4 /* NSManagedLocal+CoreDataProperties.swift */; };
+		715AC9C31D972F7400A738C4 /* NSManagedLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715AC9B31D972F7400A738C4 /* NSManagedLocal.swift */; };
+		715AC9C41D972F7400A738C4 /* NSManagedLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715AC9B31D972F7400A738C4 /* NSManagedLocal.swift */; };
+		715AC9C51D972F7400A738C4 /* NSManagedLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715AC9B31D972F7400A738C4 /* NSManagedLocal.swift */; };
+		715AC9C81D97479A00A738C4 /* WLocalRecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715AC9C71D97479A00A738C4 /* WLocalRecipeTableViewCell.swift */; };
+		715AC9C91D97479A00A738C4 /* WLocalRecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715AC9C71D97479A00A738C4 /* WLocalRecipeTableViewCell.swift */; };
+		715AC9CA1D97479A00A738C4 /* WLocalRecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715AC9C71D97479A00A738C4 /* WLocalRecipeTableViewCell.swift */; };
 		716444001D947AAD00C762D5 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716443FF1D947AAD00C762D5 /* Util.swift */; };
 		716444011D947AAD00C762D5 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716443FF1D947AAD00C762D5 /* Util.swift */; };
 		716444021D947AAD00C762D5 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716443FF1D947AAD00C762D5 /* Util.swift */; };
@@ -341,15 +350,11 @@
 /* Begin PBXFileReference section */
 		1C1A08DFF8D66863B3214C06 /* Pods-appTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-appTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-appTests/Pods-appTests.debug.xcconfig"; sourceTree = "<group>"; };
 		56EFCD6F37CBBB63D2C6DEAE /* Pods-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-app.release.xcconfig"; path = "Pods/Target Support Files/Pods-app/Pods-app.release.xcconfig"; sourceTree = "<group>"; };
-		7107EB171D95E9BC00FBFFC7 /* NSManagedLocal+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedLocal+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		7107EB181D95E9BC00FBFFC7 /* NSManagedLocal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedLocal.swift; sourceTree = "<group>"; };
-		7107EB191D95E9BC00FBFFC7 /* NSManagedRecipe+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedRecipe+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		7107EB1A1D95E9BC00FBFFC7 /* NSManagedRecipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedRecipe.swift; sourceTree = "<group>"; };
-		7107EB1B1D95E9BC00FBFFC7 /* NSManagedCategory+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedCategory+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		7107EB1C1D95E9BC00FBFFC7 /* NSManagedCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedCategory.swift; sourceTree = "<group>"; };
 		7107EB2F1D95EC1100FBFFC7 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		7107EB321D95EE0B00FBFFC7 /* WMainBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WMainBoard.swift; path = Singleton/WMainBoard.swift; sourceTree = "<group>"; };
 		7107EB371D95FBEF00FBFFC7 /* WLocalTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WLocalTableViewCell.swift; path = Components/WLocalTableViewCell.swift; sourceTree = "<group>"; };
+		712AA6711D970FFD00F3B3DA /* WRecipeProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WRecipeProfileTableViewCell.swift; path = Components/WRecipeProfileTableViewCell.swift; sourceTree = "<group>"; };
+		712AA6761D9720D300F3B3DA /* WRatingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WRatingViewController.swift; path = Components/WRatingViewController.swift; sourceTree = "<group>"; };
 		7140981E1D90DC2800B43B11 /* WLocalProfileDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WLocalProfileDataManager.swift; sourceTree = "<group>"; };
 		714098201D90DC2800B43B11 /* WLocalProfileInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WLocalProfileInteractor.swift; sourceTree = "<group>"; };
 		714098221D90DC2800B43B11 /* WLocalProfileModuleInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WLocalProfileModuleInterface.swift; sourceTree = "<group>"; };
@@ -400,6 +405,13 @@
 		71573C861D94B0CD0049E3E0 /* l6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = l6.jpg; sourceTree = "<group>"; };
 		71573C871D94B0CD0049E3E0 /* l7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = l7.jpg; sourceTree = "<group>"; };
 		71573C881D94B0CD0049E3E0 /* l8.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = l8.jpg; sourceTree = "<group>"; };
+		715AC9AE1D972F7400A738C4 /* NSManagedCategory+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedCategory+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		715AC9AF1D972F7400A738C4 /* NSManagedCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedCategory.swift; sourceTree = "<group>"; };
+		715AC9B01D972F7400A738C4 /* NSManagedRecipe+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedRecipe+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		715AC9B11D972F7400A738C4 /* NSManagedRecipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedRecipe.swift; sourceTree = "<group>"; };
+		715AC9B21D972F7400A738C4 /* NSManagedLocal+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedLocal+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		715AC9B31D972F7400A738C4 /* NSManagedLocal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedLocal.swift; sourceTree = "<group>"; };
+		715AC9C71D97479A00A738C4 /* WLocalRecipeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WLocalRecipeTableViewCell.swift; path = Components/WLocalRecipeTableViewCell.swift; sourceTree = "<group>"; };
 		716443FF1D947AAD00C762D5 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Util.swift; path = Util/Util.swift; sourceTree = "<group>"; };
 		716B55DF1D9602CF00D812C6 /* WRecipeRatedDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WRecipeRatedDataManager.swift; sourceTree = "<group>"; };
 		716B55E11D9602CF00D812C6 /* WRecipeRatedInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WRecipeRatedInteractor.swift; sourceTree = "<group>"; };
@@ -580,6 +592,15 @@
 			name = Components;
 			sourceTree = "<group>";
 		};
+		712AA6701D970FDE00F3B3DA /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				712AA6711D970FFD00F3B3DA /* WRecipeProfileTableViewCell.swift */,
+				712AA6761D9720D300F3B3DA /* WRatingViewController.swift */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
 		7140981C1D90DC2800B43B11 /* LocalProfile */ = {
 			isa = PBXGroup;
 			children = (
@@ -628,6 +649,7 @@
 		714098251D90DC2800B43B11 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				715AC9C61D97477D00A738C4 /* Components */,
 				714098261D90DC2800B43B11 /* WLocalProfileViewController.swift */,
 				714098271D90DC2800B43B11 /* WLocalProfileViewInterface.swift */,
 			);
@@ -690,6 +712,7 @@
 		714098331D90DC2800B43B11 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				712AA6701D970FDE00F3B3DA /* Components */,
 				714098341D90DC2800B43B11 /* WRecipeProfileViewController.swift */,
 				714098351D90DC2800B43B11 /* WRecipeProfileViewInterface.swift */,
 			);
@@ -787,15 +810,23 @@
 			path = Local;
 			sourceTree = "<group>";
 		};
+		715AC9C61D97477D00A738C4 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				715AC9C71D97479A00A738C4 /* WLocalRecipeTableViewCell.swift */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
 		716443DD1D9479B200C762D5 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				7107EB171D95E9BC00FBFFC7 /* NSManagedLocal+CoreDataProperties.swift */,
-				7107EB181D95E9BC00FBFFC7 /* NSManagedLocal.swift */,
-				7107EB191D95E9BC00FBFFC7 /* NSManagedRecipe+CoreDataProperties.swift */,
-				7107EB1A1D95E9BC00FBFFC7 /* NSManagedRecipe.swift */,
-				7107EB1B1D95E9BC00FBFFC7 /* NSManagedCategory+CoreDataProperties.swift */,
-				7107EB1C1D95E9BC00FBFFC7 /* NSManagedCategory.swift */,
+				715AC9AE1D972F7400A738C4 /* NSManagedCategory+CoreDataProperties.swift */,
+				715AC9AF1D972F7400A738C4 /* NSManagedCategory.swift */,
+				715AC9B01D972F7400A738C4 /* NSManagedRecipe+CoreDataProperties.swift */,
+				715AC9B11D972F7400A738C4 /* NSManagedRecipe.swift */,
+				715AC9B21D972F7400A738C4 /* NSManagedLocal+CoreDataProperties.swift */,
+				715AC9B31D972F7400A738C4 /* NSManagedLocal.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -2034,7 +2065,6 @@
 			files = (
 				717C266D1D889B1600E50459 /* WLocalInteractor.swift in Sources */,
 				71DDF6F61D89DA3F001A5646 /* WLoginModuleInterface.swift in Sources */,
-				7107EB261D95E9BC00FBFFC7 /* NSManagedRecipe.swift in Sources */,
 				717C26901D88A1F900E50459 /* WRateInteractor.swift in Sources */,
 				714098451D90DC2800B43B11 /* WRecipeProfileWireframe.swift in Sources */,
 				714098431D90DC2800B43B11 /* WRecipeProfileViewController.swift in Sources */,
@@ -2050,7 +2080,6 @@
 				714098401D90DC2800B43B11 /* WRecipeProfileInteractor.swift in Sources */,
 				7140983E1D90DC2800B43B11 /* WLocalProfileWireframe.swift in Sources */,
 				717C26991D88A1F900E50459 /* WRateViewController.swift in Sources */,
-				7107EB1D1D95E9BC00FBFFC7 /* NSManagedLocal+CoreDataProperties.swift in Sources */,
 				71DDF7211D89EE76001A5646 /* WProfilePresenter.swift in Sources */,
 				718ADC261D8C7F3900982CB8 /* WMenuViewInterface.swift in Sources */,
 				71DDF6FA1D89DA3F001A5646 /* WLoginWireframe.swift in Sources */,
@@ -2068,30 +2097,30 @@
 				71DDF70F1D89E4A4001A5646 /* WRegisterWireframe.swift in Sources */,
 				717C26701D889B1600E50459 /* WLocalModuleInterface.swift in Sources */,
 				717C26BF1D88A98000E50459 /* WSearchViewInterface.swift in Sources */,
-				7107EB2C1D95E9BC00FBFFC7 /* NSManagedCategory.swift in Sources */,
 				71DDF7391D89F9C4001A5646 /* WMapWireframe.swift in Sources */,
 				71DDF7221D89EE76001A5646 /* WProfileViewController.swift in Sources */,
 				71DDF71F1D89EE76001A5646 /* WProfileInteractor.swift in Sources */,
 				71DDF7091D89E4A4001A5646 /* WRegisterDataManager.swift in Sources */,
+				715AC9B71D972F7400A738C4 /* NSManagedCategory.swift in Sources */,
 				717C26731D889B1600E50459 /* WLocalPresenter.swift in Sources */,
+				715AC9C31D972F7400A738C4 /* NSManagedLocal.swift in Sources */,
 				71DDF7241D89EE76001A5646 /* WProfileWireframe.swift in Sources */,
 				71DDF7341D89F9C4001A5646 /* WMapInteractor.swift in Sources */,
 				717C269F1D88A1F900E50459 /* WRateWireframe.swift in Sources */,
 				71DDF7201D89EE76001A5646 /* WProfileModuleInterface.swift in Sources */,
 				71D3145A1D884A5C008307DC /* WorcipeAppDependencies.swift in Sources */,
-				7107EB291D95E9BC00FBFFC7 /* NSManagedCategory+CoreDataProperties.swift in Sources */,
 				718ADC241D8C7F3900982CB8 /* WMenuPresenter.swift in Sources */,
 				718ADC271D8C7F3900982CB8 /* WMenuWireframe.swift in Sources */,
 				71DDF70D1D89E4A4001A5646 /* WRegisterViewController.swift in Sources */,
 				716444001D947AAD00C762D5 /* Util.swift in Sources */,
 				7140983F1D90DC2800B43B11 /* WRecipeProfileDataManager.swift in Sources */,
+				715AC9BA1D972F7400A738C4 /* NSManagedRecipe+CoreDataProperties.swift in Sources */,
 				714098391D90DC2800B43B11 /* WLocalProfileInteractor.swift in Sources */,
 				7107EB381D95FBEF00FBFFC7 /* WLocalTableViewCell.swift in Sources */,
 				717C262D1D88617F00E50459 /* UIColorExtension.swift in Sources */,
 				71DDF6F51D89DA3F001A5646 /* WLoginInteractor.swift in Sources */,
 				718ADC251D8C7F3900982CB8 /* WMenuViewController.swift in Sources */,
 				716B55EE1D9602CF00D812C6 /* WRecipeRatedPresenter.swift in Sources */,
-				7107EB231D95E9BC00FBFFC7 /* NSManagedRecipe+CoreDataProperties.swift in Sources */,
 				71DDF6F81D89DA3F001A5646 /* WLoginViewController.swift in Sources */,
 				717C26791D889B1600E50459 /* WLocalViewInterface.swift in Sources */,
 				71D314591D884A5C008307DC /* WorcipeAppDelegate.swift in Sources */,
@@ -2102,11 +2131,13 @@
 				718ADC2A1D8C86C400982CB8 /* WMenuTableViewCell.swift in Sources */,
 				71DDF7351D89F9C4001A5646 /* WMapModuleInterface.swift in Sources */,
 				717C25FB1D88570F00E50459 /* WHomeWireframe.swift in Sources */,
+				715AC9B41D972F7400A738C4 /* NSManagedCategory+CoreDataProperties.swift in Sources */,
 				716B55ED1D9602CF00D812C6 /* WRecipeRatedModuleInterface.swift in Sources */,
 				717C266A1D889B1600E50459 /* WLocalDataManager.swift in Sources */,
 				717C264B1D886E2700E50459 /* WConstants.swift in Sources */,
 				71DDF7361D89F9C4001A5646 /* WMapPresenter.swift in Sources */,
 				71A66F791D8C7DB700513A15 /* Model.swift in Sources */,
+				712AA6771D9720D300F3B3DA /* WRatingViewController.swift in Sources */,
 				717C25F71D88570F00E50459 /* WHomeModuleInterface.swift in Sources */,
 				71DDF6F91D89DA3F001A5646 /* WLoginViewInterface.swift in Sources */,
 				71D314581D884A5C008307DC /* RootWireframe.swift in Sources */,
@@ -2115,10 +2146,11 @@
 				71DDF7231D89EE76001A5646 /* WProfileViewInterface.swift in Sources */,
 				717C26B01D88A98000E50459 /* WSearchDataManager.swift in Sources */,
 				716B55F01D9602CF00D812C6 /* WRecipeRatedViewInterface.swift in Sources */,
-				7107EB201D95E9BC00FBFFC7 /* NSManagedLocal.swift in Sources */,
 				71DDF6F71D89DA3F001A5646 /* WLoginPresenter.swift in Sources */,
 				717C267C1D889B1600E50459 /* WLocalWireframe.swift in Sources */,
 				718ADC211D8C7F3900982CB8 /* WMenuDataManager.swift in Sources */,
+				715AC9C01D972F7400A738C4 /* NSManagedLocal+CoreDataProperties.swift in Sources */,
+				712AA6721D970FFD00F3B3DA /* WRecipeProfileTableViewCell.swift in Sources */,
 				7140983C1D90DC2800B43B11 /* WLocalProfileViewController.swift in Sources */,
 				718ADC221D8C7F3900982CB8 /* WMenuInteractor.swift in Sources */,
 				7140983B1D90DC2800B43B11 /* WLocalProfilePresenter.swift in Sources */,
@@ -2137,6 +2169,8 @@
 				716B55EB1D9602CF00D812C6 /* WRecipeRatedDataManager.swift in Sources */,
 				717C26351D8861B800E50459 /* StringExtension.swift in Sources */,
 				714098421D90DC2800B43B11 /* WRecipeProfilePresenter.swift in Sources */,
+				715AC9C81D97479A00A738C4 /* WLocalRecipeTableViewCell.swift in Sources */,
+				715AC9BD1D972F7400A738C4 /* NSManagedRecipe.swift in Sources */,
 				716B55F11D9602CF00D812C6 /* WRecipeRatedWireframe.swift in Sources */,
 				714098441D90DC2800B43B11 /* WRecipeProfileViewInterface.swift in Sources */,
 				717C25F91D88570F00E50459 /* WHomeViewController.swift in Sources */,
@@ -2152,6 +2186,7 @@
 				717C26C31D88A98000E50459 /* WSearchWireframe.swift in Sources */,
 				7107EB391D95FBEF00FBFFC7 /* WLocalTableViewCell.swift in Sources */,
 				716B55F51D9605FF00D812C6 /* WRecipeRatedTableViewCell.swift in Sources */,
+				712AA6731D970FFD00F3B3DA /* WRecipeProfileTableViewCell.swift in Sources */,
 				717C26321D88619E00E50459 /* UITextFieldExtension.swift in Sources */,
 				717C26711D889B1600E50459 /* WLocalModuleInterface.swift in Sources */,
 				717C26BD1D88A98000E50459 /* WSearchViewController.swift in Sources */,
@@ -2159,32 +2194,34 @@
 				717C268E1D88A1F900E50459 /* WRateDataManager.swift in Sources */,
 				717C26291D885C2500E50459 /* WSlideMenuViewController.swift in Sources */,
 				716444011D947AAD00C762D5 /* Util.swift in Sources */,
+				715AC9C91D97479A00A738C4 /* WLocalRecipeTableViewCell.swift in Sources */,
 				717C26361D8861B800E50459 /* StringExtension.swift in Sources */,
+				715AC9C41D972F7400A738C4 /* NSManagedLocal.swift in Sources */,
 				717C266E1D889B1600E50459 /* WLocalInteractor.swift in Sources */,
-				7107EB1E1D95E9BC00FBFFC7 /* NSManagedLocal+CoreDataProperties.swift in Sources */,
+				715AC9C11D972F7400A738C4 /* NSManagedLocal+CoreDataProperties.swift in Sources */,
 				71D314651D884AF8008307DC /* WCoreDataStore.swift in Sources */,
-				7107EB241D95E9BC00FBFFC7 /* NSManagedRecipe+CoreDataProperties.swift in Sources */,
+				715AC9BB1D972F7400A738C4 /* NSManagedRecipe+CoreDataProperties.swift in Sources */,
+				715AC9B81D972F7400A738C4 /* NSManagedCategory.swift in Sources */,
 				717C267D1D889B1600E50459 /* WLocalWireframe.swift in Sources */,
-				7107EB2A1D95E9BC00FBFFC7 /* NSManagedCategory+CoreDataProperties.swift in Sources */,
 				717C26B11D88A98000E50459 /* WSearchDataManager.swift in Sources */,
 				717C26771D889B1600E50459 /* WLocalViewController.swift in Sources */,
-				7107EB271D95E9BC00FBFFC7 /* NSManagedRecipe.swift in Sources */,
 				717C26C01D88A98000E50459 /* WSearchViewInterface.swift in Sources */,
 				717C263A1D8861D000E50459 /* GenericExtensions.swift in Sources */,
 				717C266B1D889B1600E50459 /* WLocalDataManager.swift in Sources */,
 				71D314351D88496A008307DC /* appTests.swift in Sources */,
 				717C262E1D88617F00E50459 /* UIColorExtension.swift in Sources */,
 				7107EB341D95EE0B00FBFFC7 /* WMainBoard.swift in Sources */,
-				7107EB2D1D95E9BC00FBFFC7 /* NSManagedCategory.swift in Sources */,
 				717C26551D8878AE00E50459 /* WRecipesFilterTableViewController.swift in Sources */,
 				717C26A01D88A1F900E50459 /* WRateWireframe.swift in Sources */,
 				717C26941D88A1F900E50459 /* WRateModuleInterface.swift in Sources */,
 				717C26511D886F9000E50459 /* WRecipeCollectionViewCell.swift in Sources */,
 				717C26741D889B1600E50459 /* WLocalPresenter.swift in Sources */,
+				715AC9BE1D972F7400A738C4 /* NSManagedRecipe.swift in Sources */,
 				717C269D1D88A1F900E50459 /* WRateViewInterface.swift in Sources */,
-				7107EB211D95E9BC00FBFFC7 /* NSManagedLocal.swift in Sources */,
 				717C26BA1D88A98000E50459 /* WSearchPresenter.swift in Sources */,
+				712AA6781D9720D300F3B3DA /* WRatingViewController.swift in Sources */,
 				717C267A1D889B1600E50459 /* WLocalViewInterface.swift in Sources */,
+				715AC9B51D972F7400A738C4 /* NSManagedCategory+CoreDataProperties.swift in Sources */,
 				717C26B71D88A98000E50459 /* WSearchModuleInterface.swift in Sources */,
 				717C26B41D88A98000E50459 /* WSearchInteractor.swift in Sources */,
 				717C269A1D88A1F900E50459 /* WRateViewController.swift in Sources */,
@@ -2201,6 +2238,7 @@
 				717C26C41D88A98000E50459 /* WSearchWireframe.swift in Sources */,
 				7107EB3A1D95FBEF00FBFFC7 /* WLocalTableViewCell.swift in Sources */,
 				716B55F61D9605FF00D812C6 /* WRecipeRatedTableViewCell.swift in Sources */,
+				712AA6741D970FFD00F3B3DA /* WRecipeProfileTableViewCell.swift in Sources */,
 				717C26331D88619E00E50459 /* UITextFieldExtension.swift in Sources */,
 				717C26721D889B1600E50459 /* WLocalModuleInterface.swift in Sources */,
 				717C26BE1D88A98000E50459 /* WSearchViewController.swift in Sources */,
@@ -2208,32 +2246,34 @@
 				717C268F1D88A1F900E50459 /* WRateDataManager.swift in Sources */,
 				717C262A1D885C2500E50459 /* WSlideMenuViewController.swift in Sources */,
 				716444021D947AAD00C762D5 /* Util.swift in Sources */,
+				715AC9CA1D97479A00A738C4 /* WLocalRecipeTableViewCell.swift in Sources */,
 				717C26371D8861B800E50459 /* StringExtension.swift in Sources */,
+				715AC9C51D972F7400A738C4 /* NSManagedLocal.swift in Sources */,
 				717C266F1D889B1600E50459 /* WLocalInteractor.swift in Sources */,
-				7107EB1F1D95E9BC00FBFFC7 /* NSManagedLocal+CoreDataProperties.swift in Sources */,
+				715AC9C21D972F7400A738C4 /* NSManagedLocal+CoreDataProperties.swift in Sources */,
 				71D314661D884AF8008307DC /* WCoreDataStore.swift in Sources */,
-				7107EB251D95E9BC00FBFFC7 /* NSManagedRecipe+CoreDataProperties.swift in Sources */,
+				715AC9BC1D972F7400A738C4 /* NSManagedRecipe+CoreDataProperties.swift in Sources */,
+				715AC9B91D972F7400A738C4 /* NSManagedCategory.swift in Sources */,
 				717C267E1D889B1600E50459 /* WLocalWireframe.swift in Sources */,
-				7107EB2B1D95E9BC00FBFFC7 /* NSManagedCategory+CoreDataProperties.swift in Sources */,
 				717C26B21D88A98000E50459 /* WSearchDataManager.swift in Sources */,
 				717C26781D889B1600E50459 /* WLocalViewController.swift in Sources */,
-				7107EB281D95E9BC00FBFFC7 /* NSManagedRecipe.swift in Sources */,
 				717C26C11D88A98000E50459 /* WSearchViewInterface.swift in Sources */,
 				717C263B1D8861D000E50459 /* GenericExtensions.swift in Sources */,
 				717C266C1D889B1600E50459 /* WLocalDataManager.swift in Sources */,
 				71D314401D88496A008307DC /* appUITests.swift in Sources */,
 				717C262F1D88617F00E50459 /* UIColorExtension.swift in Sources */,
 				7107EB351D95EE0B00FBFFC7 /* WMainBoard.swift in Sources */,
-				7107EB2E1D95E9BC00FBFFC7 /* NSManagedCategory.swift in Sources */,
 				717C26561D8878AE00E50459 /* WRecipesFilterTableViewController.swift in Sources */,
 				717C26A11D88A1F900E50459 /* WRateWireframe.swift in Sources */,
 				717C26951D88A1F900E50459 /* WRateModuleInterface.swift in Sources */,
 				717C26521D886F9000E50459 /* WRecipeCollectionViewCell.swift in Sources */,
 				717C26751D889B1600E50459 /* WLocalPresenter.swift in Sources */,
+				715AC9BF1D972F7400A738C4 /* NSManagedRecipe.swift in Sources */,
 				717C269E1D88A1F900E50459 /* WRateViewInterface.swift in Sources */,
-				7107EB221D95E9BC00FBFFC7 /* NSManagedLocal.swift in Sources */,
 				717C26BB1D88A98000E50459 /* WSearchPresenter.swift in Sources */,
+				712AA6791D9720D300F3B3DA /* WRatingViewController.swift in Sources */,
 				717C267B1D889B1600E50459 /* WLocalViewInterface.swift in Sources */,
+				715AC9B61D972F7400A738C4 /* NSManagedCategory+CoreDataProperties.swift in Sources */,
 				717C26B81D88A98000E50459 /* WSearchModuleInterface.swift in Sources */,
 				717C26B51D88A98000E50459 /* WSearchInteractor.swift in Sources */,
 				717C269B1D88A1F900E50459 /* WRateViewController.swift in Sources */,
@@ -2378,9 +2418,10 @@
 			baseConfigurationReference = A3245C0E1ED37BB375162DCA /* Pods-app.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = app/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = self.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.worcipe.app;
 				PRODUCT_NAME = Worcipe;
 			};
 			name = Debug;
@@ -2390,9 +2431,10 @@
 			baseConfigurationReference = 56EFCD6F37CBBB63D2C6DEAE /* Pods-app.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = app/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = self.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.worcipe.app;
 				PRODUCT_NAME = Worcipe;
 			};
 			name = Release;

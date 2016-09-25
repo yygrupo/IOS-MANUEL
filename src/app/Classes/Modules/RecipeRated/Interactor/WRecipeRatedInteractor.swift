@@ -13,18 +13,29 @@ class WRecipeRatedInteractor: NSObject
     weak var presenter: WRecipeRatedPresenter?
     var dataManager: WRecipeRatedDataManager?
     
+    var recipeStack = [WRecipe]()
+    var recipesToShow = [WRecipe]()
+    
     func findRecipesRated() {
-        let locals = WMainBoard.sharedInstance.locals
-        var recipes = [WRecipe]()
-        
-        for local in locals {
-            for recipe in local.recipes! {
-                if recipe.raiting > 0 {
-                    recipes.append(recipe)
-                }
-            }
+        recipeStack.removeAll()
+        recipesToShow.removeAll()
+        dataManager?.findRecipes({ (recipes) in
+            self.recipeStack = recipes!
+            self.findLocalFromRecipe()
+        })
+    }
+    
+    func findLocalFromRecipe() {
+        if recipeStack.count == 0 {
+            self.presenter?.updateViewWithRecipes(recipesToShow)
+            return
         }
         
-        presenter?.updateViewWithRecipes(recipes)
+        var recipe = recipeStack.removeFirst()
+        dataManager?.findLocalFromRecipe(recipe, completion: { (local) in
+            recipe.local = local
+            self.recipesToShow.append(recipe)
+            self.findLocalFromRecipe()
+        })
     }
 }

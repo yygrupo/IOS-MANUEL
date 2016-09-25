@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import GoogleMaps
+import IQKeyboardManagerSwift
 
 class WorcipeAppDependencies: NSObject
 {
@@ -20,6 +22,10 @@ class WorcipeAppDependencies: NSObject
         let obj = WorcipeAppDependencies()
         obj.configureDependencies(window)
         WMainBoard.sharedInstance.startUpdatingLocation()
+        
+        IQKeyboardManager.sharedManager().enable = true
+        
+        GMSServices.provideAPIKey(AppAPI.googleMaps)
 
         return obj
     }
@@ -165,6 +171,7 @@ class WorcipeAppDependencies: NSObject
         homeWireframe!.rootWireframe = rootWireframe
         // *** connect more wireframes
         rootWireframe.homeWireframe = homeWireframe
+        homeWireframe?.recipeprofileWireframe = recipeprofileWireframe
         // configure delegate
         // *** add delegate here if needed
         // end Home module
@@ -212,9 +219,12 @@ class WorcipeAppDependencies: NSObject
         localInteractor.dataManager = localDataManager
         // data_manager -> data_store
         // *** connect datastore
+        localDataManager.dataStore = dataStore
         // connect wireframes
         localWireframe.rootWireframe = rootWireframe
         // *** connect more wireframes
+        localWireframe.localprofileWireframe = localprofileWireframe
+        localWireframe.mapWireframe = mapWireframe
         // configure delegate
         // *** add delegate here if needed
         // end Local module
@@ -332,6 +342,7 @@ class WorcipeAppDependencies: NSObject
         mapInteractor.dataManager = mapDataManager
         // data_manager -> data_store
         // *** connect datastore
+        mapDataManager.dataStore = dataStore
         // connect wireframes
         mapWireframe.rootWireframe = rootWireframe
         // *** connect more wireframes
@@ -356,7 +367,7 @@ class WorcipeAppDependencies: NSObject
         
         // data_manager -> data_store
         // *** connect datastore
-        
+        localprofileDataManager.dataStore = dataStore
         // connect wireframes
         localprofileWireframe.rootWireframe = rootWireframe
         // *** connect more wireframes
@@ -410,11 +421,11 @@ class WorcipeAppDependencies: NSObject
         
         // data_manager -> data_store
         // *** connect datastore
-        
+        recipeprofileDataManager.dataStore = dataStore
         // connect wireframes
         recipeprofileWireframe.rootWireframe = rootWireframe
         // *** connect more wireframes
-        
+        recipeprofileWireframe.localprofileWireframe = localprofileWireframe
         // configure delegate
         // *** add delegate here if needed
         
@@ -437,11 +448,11 @@ class WorcipeAppDependencies: NSObject
         
         // data_manager -> data_store
         // *** connect datastore
-        
+        reciperatedDataManager.dataStore = dataStore
         // connect wireframes
         reciperatedWireframe.rootWireframe = rootWireframe
         // *** connect more wireframes
-        
+        reciperatedWireframe.recipeprofileWireframe = recipeprofileWireframe
         // configure delegate
         // *** add delegate here if needed
         

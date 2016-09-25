@@ -11,6 +11,7 @@ import Foundation
 protocol WRecipeRatedModuleInterface
 {
     func updateView()
+    func presentRecipeDetail(recipe: WRecipe)
 }
 
 protocol WRecipeRatedModuleDelegate

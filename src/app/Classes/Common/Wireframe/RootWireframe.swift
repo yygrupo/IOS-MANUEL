@@ -39,6 +39,7 @@ class RootWireframe: NSObject
     func setMainViewController(viewController: UIViewController) {
         slideMenuController?.mainViewController = viewController
         slideMenuController?.closeLeft()
+        slideMenuController!.view.setNeedsDisplay()
     }
     
     func selfNavigationController() -> UINavigationController {

@@ -2,7 +2,7 @@
 //  NSManagedCategory.swift
 //  app
 //
-//  Created by Manuel Alejandro on 9/23/16.
+//  Created by male on 9/24/16.
 //  Copyright © 2016 Manuel Alejandro. All rights reserved.
 //
 

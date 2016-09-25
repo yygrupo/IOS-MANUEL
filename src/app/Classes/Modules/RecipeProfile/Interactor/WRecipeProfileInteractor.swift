@@ -12,4 +12,10 @@ class WRecipeProfileInteractor: NSObject
 {
     weak var presenter: WRecipeProfilePresenter?
     var dataManager: WRecipeProfileDataManager?
+    
+    func updateRate(recipe: WRecipe) {
+        dataManager?.updateRateForRecipe(recipe, completion: { 
+            self.presenter?.ratingUpdated()
+        })
+    }
 }

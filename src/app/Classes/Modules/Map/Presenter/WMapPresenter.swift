@@ -14,6 +14,20 @@ class WMapPresenter: NSObject, WMapModuleInterface
     weak var wireframe: WMapWireframe?
     var userInterface: WMapViewInterface?
 
-    // MARK: - WMapModuleInterface methods
+    func updateViewWithLocal(locals: [WLocal]) {
+        userInterface?.updateViewWithLocal(locals)
+    }
+    
+    // MARK: - WLocalModuleInterface methods
     // implement module interface here
+    
+    func updateView() {
+        interactor?.findLocals()
+    }
+    
+    func showLocalProfile(local: WLocal) {
+        WMainBoard.sharedInstance.recipeProfile = nil
+        WMainBoard.sharedInstance.localProfile = local
+        wireframe?.presentLocalDetailView()
+    }
 }

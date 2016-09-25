@@ -43,6 +43,9 @@ class WRecipeRatedViewController: UIViewController, WRecipeRatedViewInterface
     {
         super.viewDidAppear(animated)
         
+        recipes.removeAll()
+        filteredData.removeAll()
+        self.tableView.reloadData()
         startLoadingView()
         dispatch_async(dispatch_get_main_queue(),{
             self.eventHandler?.updateView()
@@ -53,7 +56,7 @@ class WRecipeRatedViewController: UIViewController, WRecipeRatedViewInterface
     private func setupView() {
         let titleLabel = UILabel(frame: (self.navigationController?.navigationBar.frame)!)
         titleLabel.textAlignment = .Left
-        titleLabel.text = "Rated".localized
+        titleLabel.text = "Puntuados".localized
         titleLabel.font = UIFont.boldSystemFontOfSize(16)
         titleLabel.textColor = UIColor.whiteColor()
         self.navigationItem.titleView = titleLabel
@@ -75,7 +78,7 @@ class WRecipeRatedViewController: UIViewController, WRecipeRatedViewInterface
             searchController.hidesNavigationBarDuringPresentation = true
             searchController.dimsBackgroundDuringPresentation = false
             searchController.searchBar.tintColor            = UIColor.whiteColor()
-            searchController.searchBar.barTintColor         = AppColors.blue
+            searchController.searchBar.barTintColor         = AppColors.blueLight
             searchController.searchBar.placeholder         = "Escriba la frase..."
             
             //setup the search bar
@@ -147,6 +150,8 @@ extension WRecipeRatedViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        let recipe : WRecipe = isDataFiltered ? filteredData[indexPath.row] : recipes[indexPath.row]
+        eventHandler?.presentRecipeDetail(recipe)
     }
 }
 

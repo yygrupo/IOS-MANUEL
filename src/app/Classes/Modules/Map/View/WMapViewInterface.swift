@@ -10,5 +10,6 @@ import Foundation
 
 protocol WMapViewInterface
 {
-
+    func updateViewWithLocal(locals: [WLocal])
+    func stopLoadingView()
 }

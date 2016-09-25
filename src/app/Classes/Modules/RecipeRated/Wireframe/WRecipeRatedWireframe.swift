@@ -14,6 +14,7 @@ class WRecipeRatedWireframe: NSObject
     var rootWireframe: RootWireframe?
     var presenter: WRecipeRatedPresenter?
     var viewController: WRecipeRatedViewController?
+    var recipeprofileWireframe: WRecipeProfileWireframe?
 
     func presentSelfFromViewController(viewController: UIViewController)
     {
@@ -42,5 +43,9 @@ class WRecipeRatedWireframe: NSObject
         // present controller
         // *** present self with RootViewController
         rootWireframe?.setMainViewController(navigationController!)
+    }
+    
+    func presentRecipeProfileView() {
+        recipeprofileWireframe?.presentSelfFromViewController(self.viewController!)
     }
 }

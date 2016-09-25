@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="16A323" minimumToolsVersion="Automatic">
     <entity name="Category" representedClassName="NSManagedCategory" syncable="YES">
-        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="categoryid" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
@@ -9,30 +9,29 @@
         <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="details" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="localid" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="phoneNumber" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="raiting" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <relationship name="recipeRelationship" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Recipe" inverseName="localRelationship" inverseEntity="Recipe" syncable="YES"/>
     </entity>
     <entity name="Recipe" representedClassName="NSManagedRecipe" syncable="YES">
         <attribute name="categoryid" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="details" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="images" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="localid" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="raiting" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="rating" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="recipeid" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="suitableForVegans" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="vegans" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="vegetarians" optional="YES" attributeType="Boolean" syncable="YES"/>
-        <relationship name="localRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Local" inverseName="recipeRelationship" inverseEntity="Local" syncable="YES"/>
     </entity>
     <elements>
         <element name="Category" positionX="-36" positionY="72" width="128" height="90"/>
-        <element name="Local" positionX="-54" positionY="54" width="128" height="210"/>
+        <element name="Local" positionX="-54" positionY="54" width="128" height="195"/>
         <element name="Recipe" positionX="-63" positionY="-18" width="128" height="195"/>
     </elements>
 </model>

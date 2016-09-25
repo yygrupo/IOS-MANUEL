@@ -24,4 +24,14 @@ class WLocalPresenter: NSObject, WLocalModuleInterface
     func updateView() {
         interactor?.findLocals()
     }
+    
+    func presentLocalDetail(local: WLocal) {
+        WMainBoard.sharedInstance.localProfile = local
+        WMainBoard.sharedInstance.recipeProfile = nil
+        wireframe?.presentLocalDetailView()
+    }
+    
+    func showMap() {
+        wireframe?.presentMapViewController()
+    }
 }

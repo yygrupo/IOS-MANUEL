@@ -14,6 +14,7 @@ class WMapWireframe: NSObject
     var rootWireframe: RootWireframe?
     var presenter: WMapPresenter?
     var viewController: WMapViewController?
+    var localprofileWireframe: WLocalProfileWireframe?
 
     func presentSelfFromViewController(viewController: UIViewController)
     {
@@ -43,5 +44,9 @@ class WMapWireframe: NSObject
         // present controller
         // *** present self with RootViewController
         rootWireframe?.setMainViewController(navigationController!)
+    }
+    
+    func presentLocalDetailView() {
+        localprofileWireframe?.presentSelfFromViewController(self.viewController!)
     }
 }

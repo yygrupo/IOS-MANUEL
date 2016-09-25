@@ -66,7 +66,9 @@ class WLocalViewController: UIViewController, WLocalViewInterface, UIPopoverPres
         
         let optionsBarButtonItem: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "Menu Circle"), style: .Plain, target: self, action: #selector(WLocalViewController.filtersAction(_:)))
         
-        self.navigationItem.rightBarButtonItems = [optionsBarButtonItem, sortBarButtonItem]
+        let mapBarButtonItem: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "Marker-Fill"), style: .Plain, target: self, action: #selector(WLocalViewController.showMap(_:)))
+        
+        self.navigationItem.rightBarButtonItems = [optionsBarButtonItem, sortBarButtonItem, mapBarButtonItem]
         
         searchController = ({
             let searchController = UISearchController(searchResultsController: nil)
@@ -74,7 +76,7 @@ class WLocalViewController: UIViewController, WLocalViewInterface, UIPopoverPres
             searchController.hidesNavigationBarDuringPresentation = true
             searchController.dimsBackgroundDuringPresentation = false
             searchController.searchBar.tintColor            = UIColor.whiteColor()
-            searchController.searchBar.barTintColor         = AppColors.blue
+            searchController.searchBar.barTintColor         = AppColors.blueLight
             searchController.searchBar.placeholder         = "Escriba la frase..."
             
             //setup the search bar
@@ -126,6 +128,10 @@ class WLocalViewController: UIViewController, WLocalViewInterface, UIPopoverPres
     func sortAction(sender: UIBarButtonItem) {
         
     }
+    
+    func showMap(sender: UIBarButtonItem) {
+        eventHandler?.showMap()
+    }
 }
 
 extension WLocalViewController: UITableViewDelegate, UITableViewDataSource {
@@ -140,12 +146,15 @@ extension WLocalViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: WLocalTableViewCell = tableView.dequeueReusableCellWithIdentifier("localResuseIdentifier", forIndexPath: indexPath) as! WLocalTableViewCell
-        cell.updateViewWithLocal(locals[indexPath.row])
+        let local : WLocal = isDataFiltered ? filteredData[indexPath.row] : locals[indexPath.row]
+        cell.updateViewWithLocal(local)
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        let local : WLocal = isDataFiltered ? filteredData[indexPath.row] : locals[indexPath.row]
+        eventHandler?.presentLocalDetail(local)
     }
 }
 

@@ -10,5 +10,6 @@ import Foundation
 
 protocol WRecipeProfileViewInterface
 {
-
+    func updateViewWithRecipe(recipe: WRecipe)
+    func stopLoadingView()
 }

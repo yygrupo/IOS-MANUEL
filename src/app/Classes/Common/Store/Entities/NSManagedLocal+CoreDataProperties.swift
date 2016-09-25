@@ -2,7 +2,7 @@
 //  NSManagedLocal+CoreDataProperties.swift
 //  app
 //
-//  Created by Manuel Alejandro on 9/23/16.
+//  Created by male on 9/24/16.
 //  Copyright © 2016 Manuel Alejandro. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -17,13 +17,12 @@ extension NSManagedLocal {
     @NSManaged var address: String?
     @NSManaged var details: String?
     @NSManaged var email: String?
-    @NSManaged var id: String?
+    @NSManaged var image: String?
+    @NSManaged var latitude: NSNumber?
+    @NSManaged var localid: String?
+    @NSManaged var longitude: NSNumber?
     @NSManaged var name: String?
     @NSManaged var phoneNumber: String?
     @NSManaged var raiting: NSNumber?
-    @NSManaged var image: String?
-    @NSManaged var latitude: NSNumber?
-    @NSManaged var longitude: NSNumber?
-    @NSManaged var recipeRelationship: NSSet?
 
 }

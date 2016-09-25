@@ -11,6 +11,8 @@ import Foundation
 protocol WLocalModuleInterface
 {
     func updateView()
+    func presentLocalDetail(local: WLocal)
+    func showMap()
 }
 
 protocol WLocalModuleDelegate

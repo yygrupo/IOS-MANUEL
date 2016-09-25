@@ -12,6 +12,25 @@ class WHomeDataManager: NSObject
 {
     var dataStore: WCoreDataStore?
     
+    func findLocalFromRecipe(recipe: WRecipe, completion: ((local: WLocal?) -> Void)?) {
+        var recipeLocal = WLocal()
+        
+        let predicate = NSPredicate(format: "localid = %@", (recipe.local?.id)!)
+        dataStore?.fetchEntriesForEntityName("Local", predicate: predicate, sortDescriptors: [], completion: { (results) in
+            if results.count > 0 {
+                let mamangedLocal = results[0] as! NSManagedLocal
+                recipeLocal = Utils.localFromManagedEntity(mamangedLocal)
+                if completion != nil {
+                    completion!(local: recipeLocal)
+                }
+            } else {
+                if completion != nil {
+                    completion!(local: recipeLocal)
+                }
+            }
+        })
+    }
+    
     func findRecipes(completion:((recipes: [WRecipe]?) -> Void)?) {
         dataStore?.fetchEntriesForEntityName("Recipe", predicate: nil, sortDescriptors: [], completion: { (results) in
             var recipes = [WRecipe]()
@@ -45,7 +64,7 @@ class WHomeDataManager: NSObject
     func saveCategories(categories: [WCategory], completion: (() -> Void)?) {
         for category in categories {
             let managedCategory = dataStore?.newManagedCategory()
-            managedCategory?.id = category.id
+            managedCategory?.categoryid = category.id
             managedCategory?.name = category.name
             managedCategory?.image = category.image
         }
@@ -62,26 +81,27 @@ class WHomeDataManager: NSObject
             managedLocal?.address = local.address
             managedLocal?.details = local.details
             managedLocal?.email = local.email
-            managedLocal?.id = local.id
+            managedLocal?.localid = local.id
             managedLocal?.image = local.image
             managedLocal?.name = local.name
             managedLocal?.phoneNumber = local.phoneNumber
             managedLocal?.raiting = NSNumber(integer: local.raiting!)
             managedLocal?.image = local.image
+            managedLocal?.latitude = local.latitude
+            managedLocal?.longitude = local.longitude
+            
             for recipe in local.recipes! {
                 let managedRecipe = dataStore?.newManagedRecipe()
                 managedRecipe?.categoryid = recipe.category
                 managedRecipe?.details = recipe.details
-                managedRecipe?.id = recipe.id
+                managedRecipe?.recipeid = recipe.id
                 managedRecipe?.images = recipe.images?.joinWithSeparator(";")
-                managedRecipe?.localRelationship = managedLocal
+                managedRecipe?.localid = local.id
+                managedRecipe?.name = recipe.name
                 managedRecipe?.vegans = NSNumber(bool: recipe.vegans!)
                 managedRecipe?.vegetarians = NSNumber(bool: recipe.vegetarians!)
                 managedRecipe?.suitableForVegans = NSNumber(bool: recipe.suitableForVegans!)
-                managedRecipe?.raiting = NSNumber(integer: recipe.raiting!)
-                var managedRecipes = managedLocal?.recipeRelationship?.allObjects
-                managedRecipes?.append(managedRecipe!)
-                managedLocal?.recipeRelationship = NSSet(array: managedRecipes!)
+                managedRecipe?.rating = NSNumber(integer: recipe.rating!)
             }
         }
         dataStore?.saveContext()

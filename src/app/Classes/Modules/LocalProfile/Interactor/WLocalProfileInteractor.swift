@@ -12,4 +12,12 @@ class WLocalProfileInteractor: NSObject
 {
     weak var presenter: WLocalProfilePresenter?
     var dataManager: WLocalProfileDataManager?
+    
+    func findLocal() {
+        var local = WMainBoard.sharedInstance.localProfile
+        dataManager?.findRecipesFromLocal(local!, completion: { (recipes) in
+            local?.recipes = recipes
+            self.presenter?.updateViewWithLocal(local!)
+        })
+    }
 }

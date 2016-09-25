@@ -19,6 +19,8 @@ class WMainBoard: NSObject {
     var currentLocation: CLLocation?
     var locals = [WLocal]()
     var categories = [WCategory]()
+    var recipeProfile: WRecipe?
+    var localProfile: WLocal?
     
     override init() {
         super.init()

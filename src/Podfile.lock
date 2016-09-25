@@ -16,6 +16,8 @@ PODS:
   - IQKeyboardManagerSwift (4.0.4)
   - MapleBacon (2.0.8)
   - MBProgressHUD (1.0.0)
+  - QRCodeReader.swift (6.1.0)
+  - SKPhotoBrowser (2.0.2)
   - SlideMenuControllerSwift (2.2.2)
   - SwiftLocation (1.0.0)
   - SwiftRandom (0.1.7)
@@ -32,6 +34,8 @@ DEPENDENCIES:
   - IQKeyboardManagerSwift
   - MapleBacon
   - MBProgressHUD
+  - QRCodeReader.swift
+  - SKPhotoBrowser
   - SlideMenuControllerSwift
   - SwiftLocation
   - SwiftRandom
@@ -48,11 +52,13 @@ SPEC CHECKSUMS:
   IQKeyboardManagerSwift: e0964d04d6a29b71016fd346dca13ecb80a2823a
   MapleBacon: 32e3590e1730485b93f450283ff242f9444efc12
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  QRCodeReader.swift: 786d70dda6c7fed54019f715cbe1f588539f7c2d
+  SKPhotoBrowser: a23a4125deca7451d298248c7eafc8332fb909df
   SlideMenuControllerSwift: e257221100c39d49edccaaeb0238b55a0c67953a
   SwiftLocation: b01455c5ff67ac66b0696b70ca9d29bda646ec5a
   SwiftRandom: a03b68cbcda1b03d0fef5a1b87296f9500b6eac3
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
-PODFILE CHECKSUM: b931d00b9166c57dffeb9a8c5cb301d9d85ec330
+PODFILE CHECKSUM: 3493203cdbe717864ad59f7b2cef53693c5a755b
 
 COCOAPODS: 1.0.1

@@ -2,7 +2,7 @@
 //  NSManagedCategory+CoreDataProperties.swift
 //  app
 //
-//  Created by Manuel Alejandro on 9/23/16.
+//  Created by male on 9/24/16.
 //  Copyright © 2016 Manuel Alejandro. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -14,7 +14,7 @@ import CoreData
 
 extension NSManagedCategory {
 
-    @NSManaged var id: String?
+    @NSManaged var categoryid: String?
     @NSManaged var image: String?
     @NSManaged var name: String?
 

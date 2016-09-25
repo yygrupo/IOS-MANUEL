@@ -23,4 +23,9 @@ class WRecipeRatedPresenter: NSObject, WRecipeRatedModuleInterface
     func updateView() {
         interactor?.findRecipesRated()
     }
+    
+    func presentRecipeDetail(recipe: WRecipe) {
+        WMainBoard.sharedInstance.recipeProfile = recipe
+        wireframe?.presentRecipeProfileView()
+    }
 }

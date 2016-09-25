@@ -14,6 +14,7 @@ class WHomeWireframe: NSObject
     var rootWireframe: RootWireframe?
     var presenter: WHomePresenter?
     var viewController: WHomeViewController?
+    var recipeprofileWireframe: WRecipeProfileWireframe?
 
     func presentSelfFromViewController(viewController: UIViewController)
     {
@@ -58,5 +59,9 @@ class WHomeWireframe: NSObject
         // present controller
         // *** present self with RootViewController
         self.rootWireframe?.showRootViewController(navigationController!)
+    }
+    
+    func presentRecipeProfileView() {
+        recipeprofileWireframe?.presentSelfFromViewController(self.viewController!)
     }
 }

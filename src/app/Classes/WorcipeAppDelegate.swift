@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import IQKeyboardManagerSwift
+
 
 @UIApplicationMain
 class WorcipeAppDelegate: UIResponder, UIApplicationDelegate
@@ -21,8 +21,6 @@ class WorcipeAppDelegate: UIResponder, UIApplicationDelegate
 
         // initialize dependencies
         self.dependencies = WorcipeAppDependencies.initWithWindow(self.window!)
-
-        IQKeyboardManager.sharedManager().enable = true
 
         // adding RootViewController
         self.dependencies?.installRootViewController()

@@ -10,7 +10,8 @@ import Foundation
 
 protocol WMapModuleInterface
 {
-
+    func updateView()
+    func showLocalProfile(local: WLocal)
 }
 
 protocol WMapModuleDelegate

@@ -10,5 +10,6 @@ import Foundation
 
 protocol WLocalProfileViewInterface
 {
-
+    func updateViewWithLocal(local: WLocal, recipe: WRecipe?)
+    func stopLoadingView()
 }

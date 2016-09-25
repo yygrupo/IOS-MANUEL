@@ -75,7 +75,7 @@ class WRecipeRatedTableViewCell: UITableViewCell {
         self.recipe = recipe
         labelRecipeName?.text = recipe.name
         labelLocalName?.text = recipe.local?.name
-        labelRaiting?.text = recipe.local?.address
+        labelRaiting?.text = "\(recipe.rating!)"
         
         if recipe.images?.count > 0 {
             imageViewRecipe?.image = UIImage(named: recipe.images![0])

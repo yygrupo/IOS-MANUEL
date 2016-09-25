@@ -56,6 +56,8 @@ class WRecipeCollectionViewCell: UICollectionViewCell {
         self.layer.shadowRadius = 5.0
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(WRecipeCollectionViewCell.calculateDistanceFromNotification(_:)), name: "NewLocation", object: nil)
+        
+        cosmosViewRaiting?.settings.updateOnTouch = false
     }
     
     func calculateDistanceFromNotification(notification: NSNotification) {
@@ -84,7 +86,7 @@ class WRecipeCollectionViewCell: UICollectionViewCell {
         labelRecipeName?.text = recipe.name
         labelLocalName?.text = recipe.local?.name
         labelAddress?.text = recipe.local?.address
-        cosmosViewRaiting?.rating = (recipe.raiting?.toDouble)!
+        cosmosViewRaiting?.rating = (recipe.rating?.toDouble)!
         if recipe.images?.count > 0 {
             imageViewRecipe?.image = UIImage(named: recipe.images![0])
         }

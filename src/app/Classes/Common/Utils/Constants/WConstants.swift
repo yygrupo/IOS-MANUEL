@@ -21,11 +21,13 @@ struct DeviceInfo {
 
 struct AppColors {
     static let blue = UIColor(hexString: "#1A4682")
+    static let blueLight = UIColor(red: 59, green: 96, blue: 147)
 }
 
 struct AppAPI {
     static let url = "http://worcipe.3wia.com/api.php"
     static let resouresPath = "http://worcipe.3wia.com/upload/"
+    static let googleMaps = "AIzaSyB8vuk-tyI565RPrZPOnItytdahAP2z4Aw"
     
 //    static let url = "http://localhost/projects/worcipe/api.php"
 //    static let resouresPath = "http://localhost/projects/worcipe/upload/"

@@ -48,6 +48,7 @@ class WHomeViewController: UIViewController, WHomeViewInterface, UICollectionVie
     {
         super.viewDidAppear(animated)
         
+        self.recipes = [WRecipe]()
         startLoadingView()
         dispatch_async(dispatch_get_main_queue(),{
             self.eventHandler?.updateView()
@@ -66,8 +67,6 @@ class WHomeViewController: UIViewController, WHomeViewInterface, UICollectionVie
         let menuBarButtonItem: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "Menu"), style: .Plain, target: self, action: #selector(WHomeViewController.showMenuAction))
         self.navigationItem.leftBarButtonItem = menuBarButtonItem
         
-        //        let searchBarButtonItem: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "Search"), style: .Plain, target: self, action: #selector(WHomeViewController.searchAction(_:)))
-        
         let sortBarButtonItem: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "Sorting Arrows"), style: .Plain, target: self, action: #selector(WHomeViewController.sortAction(_:)))
         
         let optionsBarButtonItem: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "Menu Circle"), style: .Plain, target: self, action: #selector(WHomeViewController.filtersAction(_:)))
@@ -85,7 +84,7 @@ class WHomeViewController: UIViewController, WHomeViewInterface, UICollectionVie
             searchController.hidesNavigationBarDuringPresentation = true
             searchController.dimsBackgroundDuringPresentation = false
             searchController.searchBar.tintColor            = UIColor.whiteColor()
-            searchController.searchBar.barTintColor         = AppColors.blue
+            searchController.searchBar.barTintColor         = AppColors.blueLight
             searchController.searchBar.placeholder         = "Escriba la frase..."
             
             //setup the search bar
@@ -136,7 +135,8 @@ class WHomeViewController: UIViewController, WHomeViewInterface, UICollectionVie
     
     // MARK: - UICollectionView Delegate
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        
+        let recipe : WRecipe = isDataFiltered ? filteredData[indexPath.row] : recipes[indexPath.row]
+        eventHandler?.presentRecipeDetail(recipe)
     }
     
     // MARK: - UICollectionViewDelegateFlowLayout

@@ -79,6 +79,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>QRCodeReader.swift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SKPhotoBrowser.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SlideMenuControllerSwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -117,17 +127,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>26D8AC7B1E6617C49CB70492F7943481</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>32082F8F064D3A4A15532A970D930A4A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>336B93337DFC5EE58B564606FF93F15D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>3903C4250ACF0058BF93445ACB971FFB</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>527CB6083196FEF28A6E758FBF4D5F60</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -147,6 +157,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>630F698BC6F0C24B75AFD033A5CB94B8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>75AEEEFD7E431013E8E60009251D5797</key>
 		<dict>
 			<key>primary</key>
@@ -162,7 +177,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>957D253B6D36AD27A709AE1C9BB6F3AE</key>
+		<key>9BF75BF96F6871258388B0F575CF4E23</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -177,7 +192,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>ABEB56D966E72370FCCE3D5CAFBF610B</key>
+		<key>DA29AE10EA2CA8841D9674135B0FDD75</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -193,6 +208,11 @@
 			<true/>
 		</dict>
 		<key>EBAD57DD889F47A23B6121B8E33E0B5C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F0C334A0BEF76608B0AF66E6FDBFDB9B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
