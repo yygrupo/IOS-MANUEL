@@ -75,7 +75,7 @@ class WRateViewController: UIViewController, WRateViewInterface
         )
         alert.addAction(UIAlertAction(title: "OK".localized, style: .Cancel, handler: nil))
         
-        self?.presentViewController(alert, animated: true, completion: nil)
+        self.presentViewController(alert, animated: true, completion: nil)
     }
     
     func stopLoadingView() {
@@ -128,7 +128,7 @@ class WRateViewController: UIViewController, WRateViewInterface
 extension WRateViewController: QRCodeReaderViewControllerDelegate {
     func reader(reader: QRCodeReaderViewController, didScanResult result: QRCodeReaderResult) {
         self.dismissViewControllerAnimated(true) { [weak self] in
-            self?.eventHandler?.qrDetected(result.value)
+            //self?.eventHandler?.codeDetected(result.value)
         }
     }
     
